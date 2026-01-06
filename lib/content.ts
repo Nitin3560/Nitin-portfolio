@@ -9,6 +9,7 @@ export type WorkProject = {
     highlights: string[];
     stack: string[];
     links?: { label: string; href: string }[];
+    isCaseStudy?: boolean; 
   };
   
   export const work: WorkProject[] = [
@@ -31,6 +32,7 @@ export type WorkProject = {
         { label: "GitHub", href: "https://github.com/Nitin3560" },
         { label: "LinkedIn", href: "https://www.linkedin.com/in/nitin-singh-rathore" },
       ],
+      isCaseStudy: false,
     },
     {
       slug: "cloud-native-ai-inference",
@@ -48,6 +50,7 @@ export type WorkProject = {
       ],
       stack: ["Docker", "AWS ECS", "AWS CodePipeline", "CloudWatch", "GCP Cloud Run", "CI/CD"],
       links: [{ label: "GitHub", href: "https://github.com/Nitin3560" }],
+      isCaseStudy: false,
     },
     {
       slug: "hand-gesture-recognition",
@@ -62,6 +65,7 @@ export type WorkProject = {
         "Built an end-to-end pipeline from camera capture → feature extraction → inference.",
       ],
       stack: ["Python", "OpenCV", "MediaPipe", "NumPy", "scikit-learn"],
+      isCaseStudy: false,
     },
     {
       slug: "stock-price-prediction",
@@ -76,6 +80,7 @@ export type WorkProject = {
         "Visualized results and model behavior to communicate findings clearly.",
       ],
       stack: ["Python", "Pandas", "NumPy", "scikit-learn", "Matplotlib"],
+      isCaseStudy: false,
     },
   ];
   
