@@ -1,5 +1,3 @@
-// lib/content.ts
-
 export type WorkProject = {
     slug: string;
     title: string;
@@ -13,6 +11,43 @@ export type WorkProject = {
   };
   
   export const work: WorkProject[] = [
+    {
+      slug: "traceback-ai-rca",
+      title: "Traceback AI — Automated Root-Cause Analysis for Distributed Systems",
+      timeframe: "2025 – Present",
+      subtitle:
+        "Correlates logs, metrics, traces, and deployment events to rank likely incident causes with an evidence trail.",
+      summary:
+        "Architected an automated RCA system for distributed microservices by building an ingest + normalization pipeline, modeling service interactions as a temporal dependency graph, and applying causal scoring over time-ordered events. Used an LLM only for human-readable explanations while keeping inference deterministic and debuggable.",
+      highlights: [
+        "Architected and implemented an automated RCA system by correlating logs, metrics, traces, and deployment events across microservices.",
+        "Designed a temporal dependency graph to model service interactions and rank likely failure causes with an evidence trail.",
+        "Implemented an OpenTelemetry-compatible ingest pipeline and event normalization layer using Python and FastAPI.",
+        "Applied causal scoring over time-ordered events, reducing incident triage time by ~50% in simulated failure scenarios.",
+        "Evaluated on simulated microservices (5–10 services, thousands of events per incident) using injected failures.",
+      ],
+      stack: ["Python", "FastAPI", "OpenTelemetry", "Distributed Systems", "Observability"],
+      links: [{ label: "GitHub", href: "https://github.com/Nitin3560" }],
+      isCaseStudy: false,
+    },
+    {
+      slug: "job-application-helper",
+      title: "Job Application Helper — Backend API for Resume & Application Automation",
+      timeframe: "2025",
+      subtitle:
+        "FastAPI service that turns job descriptions into structured, recruiter-ready application content.",
+      summary:
+        "Built a FastAPI backend to analyze job descriptions and return structured application outputs through clean REST endpoints. Optimized the workflow for fast iteration during active job searches and designed the architecture to be extensible for resume parsing, ATS optimization, and rule-based validation.",
+      highlights: [
+        "Built a FastAPI-based backend service to analyze job descriptions and generate structured, recruiter-ready application content.",
+        "Designed clean REST endpoints for submitting job data and returning concise, deterministic AI responses.",
+        "Optimized for fast iteration workflows, supporting repeated executions during active job searches.",
+        "Architected the system to be easily extensible for resume parsing, ATS optimization, and rule-based validation.",
+      ],
+      stack: ["Python", "FastAPI", "REST APIs", "Backend Systems"],
+      links: [{ label: "GitHub", href: "https://github.com/Nitin3560" }],
+      isCaseStudy: false,
+    },
     {
       slug: "telecom-rag-thesis",
       title:
