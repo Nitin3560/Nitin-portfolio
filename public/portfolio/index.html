@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nitin Singh Rathore — Backend Engineer & UAV Systems Researcher</title>
   <meta name="description" content="Backend engineer, systems researcher, and builder. MS CS at UT Arlington. Specializing in distributed systems, fault-tolerant control, and UAV swarm coordination." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23070b14'/><text y='78' x='8' font-size='72' font-family='monospace' fill='%2300d4ff' font-weight='bold'>N</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23070b14'/><text y='78' x='8' font-size='72' font-family='monospace' fill='%239b6dff' font-weight='bold'>N</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
@@ -68,8 +68,8 @@
       </div>
       <div class="hero-stats">
         <div class="hstat"><span class="hstat-n">2+</span><span class="hstat-l">Years Industry Exp.</span></div>
-        <div class="hstat"><span class="hstat-n">289%</span><span class="hstat-l">UAV Task Completion ↑</span></div>
-        <div class="hstat"><span class="hstat-n">53.8%</span><span class="hstat-l">Faster Fault Recovery</span></div>
+        <div class="hstat"><span class="hstat-n">MS CS</span><span class="hstat-l">UT Arlington · Dec 2026</span></div>
+        <div class="hstat"><span class="hstat-n">Thesis</span><span class="hstat-l">UAV fault-tolerance work in review</span></div>
         <div class="hstat"><span class="hstat-n">100+</span><span class="hstat-l">Students Mentored</span></div>
       </div>
     </div>
@@ -92,30 +92,11 @@
           <span class="pbadge pb-blue"><i class="fas fa-satellite-dish"></i>&nbsp; Active Research</span>
           <h3 class="ptitle">UAV Swarm Coordination Simulator</h3>
           <p class="psub">Fault-Tolerant Multi-Agent Control Architecture · Python · PyBullet · CTDE MAPPO</p>
-          <div class="metrics4">
-            <div class="metric">
-              <div class="m-num" data-count="289.6" data-suffix="%">0%</div>
-              <div class="m-label">Higher task-completion rate under fault conditions</div>
-            </div>
-            <div class="metric">
-              <div class="m-num" data-count="53.8" data-suffix="%">0%</div>
-              <div class="m-label">Faster fault recovery vs. PID baseline (5.3s → 11.4s)</div>
-            </div>
-            <div class="metric">
-              <div class="m-num" data-count="63.4" data-suffix="%">0%</div>
-              <div class="m-label">Communication overhead reduction at 30-drone scale</div>
-            </div>
-            <div class="metric">
-              <div class="m-num" data-count="10" data-suffix=" seeds">0</div>
-              <div class="m-label">100% stable runs across independent random seeds</div>
-            </div>
-          </div>
           <p class="pdesc">
-            Hierarchical fault-tolerant architecture for a 4-drone swarm — <strong>48 Hz cascaded PID inner loop</strong>
-            paired with a <strong>5 Hz agentic supervisor</strong>. CTDE MAPPO multi-agent RL for 6-UAV task allocation yields
-            <strong>15% error reduction under comm faults</strong> and <strong>16.8% under sensor-corruption</strong>.
-            Localized coordination scales <strong>linearly O(N)</strong> vs. O(N²) for centralized baselines —
-            delivering <strong>28.5% lower tracking error</strong> across GPS drift and degraded-signal scenarios.
+            Thesis-driven simulation platform for resilient multi-UAV coordination under GPS drift, communication degradation,
+            and sensor corruption. The system combines a <strong>cascaded control loop</strong> with a
+            <strong>supervisory multi-agent layer</strong> to study how autonomous teams recover gracefully when the environment stops cooperating.
+            Specific quantitative results are intentionally omitted here while the manuscript is under review.
           </p>
           <div class="tags">
             <span class="tag">Python</span><span class="tag">PyBullet</span><span class="tag">CTDE MAPPO</span>
@@ -132,29 +113,29 @@
         <!-- Animated drone formation diagram -->
         <div class="drone-viz">
           <svg viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <line x1="0"   y1="110" x2="220" y2="110" stroke="rgba(0,212,255,.06)" stroke-width="1"/>
-            <line x1="110" y1="0"   x2="110" y2="220" stroke="rgba(0,212,255,.06)" stroke-width="1"/>
-            <line x1="0"   y1="55"  x2="220" y2="55"  stroke="rgba(0,212,255,.04)" stroke-width="1" stroke-dasharray="4 5"/>
-            <line x1="0"   y1="165" x2="220" y2="165" stroke="rgba(0,212,255,.04)" stroke-width="1" stroke-dasharray="4 5"/>
-            <line x1="55"  y1="0"   x2="55"  y2="220" stroke="rgba(0,212,255,.04)" stroke-width="1" stroke-dasharray="4 5"/>
-            <line x1="165" y1="0"   x2="165" y2="220" stroke="rgba(0,212,255,.04)" stroke-width="1" stroke-dasharray="4 5"/>
-            <line x1="110" y1="42"  x2="178" y2="110" stroke="rgba(0,212,255,.22)" stroke-width="1.2" stroke-dasharray="6 4"/>
-            <line x1="178" y1="110" x2="110" y2="178" stroke="rgba(0,212,255,.22)" stroke-width="1.2" stroke-dasharray="6 4"/>
-            <line x1="110" y1="178" x2="42"  y2="110" stroke="rgba(0,212,255,.22)" stroke-width="1.2" stroke-dasharray="6 4"/>
-            <line x1="42"  y1="110" x2="110" y2="42"  stroke="rgba(0,212,255,.22)" stroke-width="1.2" stroke-dasharray="6 4"/>
-            <line x1="110" y1="42"  x2="110" y2="178" stroke="rgba(0,212,255,.09)" stroke-width="1" stroke-dasharray="3 6"/>
-            <line x1="42"  y1="110" x2="178" y2="110" stroke="rgba(0,212,255,.09)" stroke-width="1" stroke-dasharray="3 6"/>
-            <circle cx="110" cy="110" r="15" fill="rgba(0,212,255,.07)" stroke="rgba(0,212,255,.45)" stroke-width="1.5"/>
-            <circle cx="110" cy="110" r="5"  fill="#00d4ff"/>
-            <text x="110" y="107" font-family="JetBrains Mono,monospace" font-size="7.5" fill="rgba(0,212,255,.9)" text-anchor="middle">CTRL</text>
-            <circle cx="110" cy="110" r="22" fill="none" stroke="rgba(0,212,255,.28)" stroke-width="1">
+            <line x1="0"   y1="110" x2="220" y2="110" stroke="rgba(155,109,255,.06)" stroke-width="1"/>
+            <line x1="110" y1="0"   x2="110" y2="220" stroke="rgba(155,109,255,.06)" stroke-width="1"/>
+            <line x1="0"   y1="55"  x2="220" y2="55"  stroke="rgba(155,109,255,.04)" stroke-width="1" stroke-dasharray="4 5"/>
+            <line x1="0"   y1="165" x2="220" y2="165" stroke="rgba(155,109,255,.04)" stroke-width="1" stroke-dasharray="4 5"/>
+            <line x1="55"  y1="0"   x2="55"  y2="220" stroke="rgba(155,109,255,.04)" stroke-width="1" stroke-dasharray="4 5"/>
+            <line x1="165" y1="0"   x2="165" y2="220" stroke="rgba(155,109,255,.04)" stroke-width="1" stroke-dasharray="4 5"/>
+            <line x1="110" y1="42"  x2="178" y2="110" stroke="rgba(155,109,255,.22)" stroke-width="1.2" stroke-dasharray="6 4"/>
+            <line x1="178" y1="110" x2="110" y2="178" stroke="rgba(155,109,255,.22)" stroke-width="1.2" stroke-dasharray="6 4"/>
+            <line x1="110" y1="178" x2="42"  y2="110" stroke="rgba(155,109,255,.22)" stroke-width="1.2" stroke-dasharray="6 4"/>
+            <line x1="42"  y1="110" x2="110" y2="42"  stroke="rgba(155,109,255,.22)" stroke-width="1.2" stroke-dasharray="6 4"/>
+            <line x1="110" y1="42"  x2="110" y2="178" stroke="rgba(155,109,255,.09)" stroke-width="1" stroke-dasharray="3 6"/>
+            <line x1="42"  y1="110" x2="178" y2="110" stroke="rgba(155,109,255,.09)" stroke-width="1" stroke-dasharray="3 6"/>
+            <circle cx="110" cy="110" r="15" fill="rgba(155,109,255,.07)" stroke="rgba(155,109,255,.45)" stroke-width="1.5"/>
+            <circle cx="110" cy="110" r="5"  fill="#9b6dff"/>
+            <text x="110" y="107" font-family="IBM Plex Mono,monospace" font-size="7.5" fill="rgba(155,109,255,.9)" text-anchor="middle">CTRL</text>
+            <circle cx="110" cy="110" r="22" fill="none" stroke="rgba(155,109,255,.28)" stroke-width="1">
               <animate attributeName="r"       values="22;65;22"  dur="3.2s" repeatCount="indefinite"/>
               <animate attributeName="opacity" values="0.4;0;0.4" dur="3.2s" repeatCount="indefinite"/>
             </circle>
-            <g><circle cx="110" cy="42" r="13" fill="rgba(0,212,255,.07)" stroke="#00d4ff" stroke-width="1.5"><animate attributeName="r" values="13;15;13" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;.65;1" dur="3s" repeatCount="indefinite"/></circle><circle cx="110" cy="42" r="4" fill="#00d4ff"/><line x1="103" y1="35" x2="117" y2="49" stroke="#00d4ff" stroke-width="1" opacity=".5"/><line x1="117" y1="35" x2="103" y2="49" stroke="#00d4ff" stroke-width="1" opacity=".5"/><text x="110" y="19" font-family="JetBrains Mono,monospace" font-size="8" fill="rgba(0,212,255,.7)" text-anchor="middle">D1</text></g>
-            <g><circle cx="178" cy="110" r="13" fill="rgba(0,212,255,.07)" stroke="#00d4ff" stroke-width="1.5"><animate attributeName="r" values="13;15;13" dur="3.6s" begin=".6s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;.65;1" dur="3.6s" begin=".6s" repeatCount="indefinite"/></circle><circle cx="178" cy="110" r="4" fill="#00d4ff"/><line x1="171" y1="103" x2="185" y2="117" stroke="#00d4ff" stroke-width="1" opacity=".5"/><line x1="185" y1="103" x2="171" y2="117" stroke="#00d4ff" stroke-width="1" opacity=".5"/><text x="201" y="114" font-family="JetBrains Mono,monospace" font-size="8" fill="rgba(0,212,255,.7)" text-anchor="middle">D2</text></g>
-            <g><circle cx="110" cy="178" r="13" fill="rgba(0,212,255,.07)" stroke="#00d4ff" stroke-width="1.5"><animate attributeName="r" values="13;15;13" dur="2.9s" begin="1.1s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;.65;1" dur="2.9s" begin="1.1s" repeatCount="indefinite"/></circle><circle cx="110" cy="178" r="4" fill="#00d4ff"/><line x1="103" y1="171" x2="117" y2="185" stroke="#00d4ff" stroke-width="1" opacity=".5"/><line x1="117" y1="171" x2="103" y2="185" stroke="#00d4ff" stroke-width="1" opacity=".5"/><text x="110" y="202" font-family="JetBrains Mono,monospace" font-size="8" fill="rgba(0,212,255,.7)" text-anchor="middle">D3</text></g>
-            <g><circle cx="42" cy="110" r="13" fill="rgba(0,212,255,.07)" stroke="#00d4ff" stroke-width="1.5"><animate attributeName="r" values="13;15;13" dur="4.1s" begin="1.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;.65;1" dur="4.1s" begin="1.6s" repeatCount="indefinite"/></circle><circle cx="42" cy="110" r="4" fill="#00d4ff"/><line x1="35" y1="103" x2="49" y2="117" stroke="#00d4ff" stroke-width="1" opacity=".5"/><line x1="49" y1="103" x2="35" y2="117" stroke="#00d4ff" stroke-width="1" opacity=".5"/><text x="19" y="114" font-family="JetBrains Mono,monospace" font-size="8" fill="rgba(0,212,255,.7)" text-anchor="middle">D4</text></g>
+            <g><circle cx="110" cy="42" r="13" fill="rgba(155,109,255,.07)" stroke="#9b6dff" stroke-width="1.5"><animate attributeName="r" values="13;15;13" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;.65;1" dur="3s" repeatCount="indefinite"/></circle><circle cx="110" cy="42" r="4" fill="#9b6dff"/><line x1="103" y1="35" x2="117" y2="49" stroke="#9b6dff" stroke-width="1" opacity=".5"/><line x1="117" y1="35" x2="103" y2="49" stroke="#9b6dff" stroke-width="1" opacity=".5"/><text x="110" y="19" font-family="IBM Plex Mono,monospace" font-size="8" fill="rgba(155,109,255,.7)" text-anchor="middle">D1</text></g>
+            <g><circle cx="178" cy="110" r="13" fill="rgba(155,109,255,.07)" stroke="#9b6dff" stroke-width="1.5"><animate attributeName="r" values="13;15;13" dur="3.6s" begin=".6s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;.65;1" dur="3.6s" begin=".6s" repeatCount="indefinite"/></circle><circle cx="178" cy="110" r="4" fill="#9b6dff"/><line x1="171" y1="103" x2="185" y2="117" stroke="#9b6dff" stroke-width="1" opacity=".5"/><line x1="185" y1="103" x2="171" y2="117" stroke="#9b6dff" stroke-width="1" opacity=".5"/><text x="201" y="114" font-family="IBM Plex Mono,monospace" font-size="8" fill="rgba(155,109,255,.7)" text-anchor="middle">D2</text></g>
+            <g><circle cx="110" cy="178" r="13" fill="rgba(155,109,255,.07)" stroke="#9b6dff" stroke-width="1.5"><animate attributeName="r" values="13;15;13" dur="2.9s" begin="1.1s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;.65;1" dur="2.9s" begin="1.1s" repeatCount="indefinite"/></circle><circle cx="110" cy="178" r="4" fill="#9b6dff"/><line x1="103" y1="171" x2="117" y2="185" stroke="#9b6dff" stroke-width="1" opacity=".5"/><line x1="117" y1="171" x2="103" y2="185" stroke="#9b6dff" stroke-width="1" opacity=".5"/><text x="110" y="202" font-family="IBM Plex Mono,monospace" font-size="8" fill="rgba(155,109,255,.7)" text-anchor="middle">D3</text></g>
+            <g><circle cx="42" cy="110" r="13" fill="rgba(155,109,255,.07)" stroke="#9b6dff" stroke-width="1.5"><animate attributeName="r" values="13;15;13" dur="4.1s" begin="1.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;.65;1" dur="4.1s" begin="1.6s" repeatCount="indefinite"/></circle><circle cx="42" cy="110" r="4" fill="#9b6dff"/><line x1="35" y1="103" x2="49" y2="117" stroke="#9b6dff" stroke-width="1" opacity=".5"/><line x1="49" y1="103" x2="35" y2="117" stroke="#9b6dff" stroke-width="1" opacity=".5"/><text x="19" y="114" font-family="IBM Plex Mono,monospace" font-size="8" fill="rgba(155,109,255,.7)" text-anchor="middle">D4</text></g>
           </svg>
         </div>
       </div>

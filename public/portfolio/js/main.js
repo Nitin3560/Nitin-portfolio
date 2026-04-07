@@ -46,7 +46,7 @@
 
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(0,212,255,${alpha})`;
+      ctx.fillStyle = `rgba(155,109,255,${alpha})`;
       ctx.fill();
 
       // draw faint lines to nearby particles — simulates signal mesh
@@ -58,7 +58,7 @@
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(q.x, q.y);
-          ctx.strokeStyle = `rgba(0,212,255,${(1 - d / 130) * .1})`; // fades with distance
+          ctx.strokeStyle = `rgba(155,109,255,${(1 - d / 130) * .1})`; // fades with distance
           ctx.lineWidth = .6;
           ctx.stroke();
         }
