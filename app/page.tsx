@@ -4,6 +4,7 @@ import { Section } from "@/components/section";
 import { SiteHeader } from "@/components/site-header";
 import { ExperienceCard } from "@/components/experience-card";
 import HeroSection from "@/components/ui/glassmorphism-trust-hero";
+import OfferCarouselDemo from "@/components/ui/demo";
 import { work } from "@/lib/content";
 import { experience } from "@/lib/experience";
 
@@ -38,6 +39,15 @@ export default function HomePage() {
             {featuredExperience.map((item) => (
               <ExperienceCard key={`${item.title}-${item.org}`} item={item} />
             ))}
+          </div>
+        </Section>
+
+        <Section
+          eyebrow="Skills"
+          title="Core strengths presented as a quick visual scan"
+        >
+          <div className="mt-6">
+            <OfferCarouselDemo />
           </div>
         </Section>
 
