@@ -30,12 +30,31 @@
 
 html { scroll-behavior: smooth; font-size: 16px; }
 body {
-  background: var(--bg);
+  background:
+    radial-gradient(circle at 12% 18%, rgba(var(--accent-rgb),.14), transparent 24%),
+    radial-gradient(circle at 84% 14%, rgba(255,183,77,.08), transparent 22%),
+    radial-gradient(circle at 72% 78%, rgba(var(--accent-rgb),.1), transparent 26%),
+    linear-gradient(135deg, rgba(255,255,255,.018) 0%, transparent 38%),
+    var(--bg);
   color: var(--text);
   font-family: var(--sans);
   line-height: 1.65;
   overflow-x: hidden;            /* prevent horizontal scroll on mobile */
   -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px),
+    linear-gradient(135deg, rgba(var(--accent-rgb),.035), transparent 45%);
+  background-size: 72px 72px, 72px 72px, 100% 100%;
+  mask-image: radial-gradient(circle at center, rgba(0,0,0,.88), transparent 92%);
 }
 ::selection { background: rgba(var(--accent-rgb),.25); color: #fff; }
 
