@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nitin Singh Rathore — Backend Engineer & UAV Systems Researcher</title>
   <meta name="description" content="Backend engineer, systems researcher, and builder. MS CS at UT Arlington. Specializing in distributed systems, fault-tolerant control, and UAV swarm coordination." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23070b14'/><text y='78' x='8' font-size='72' font-family='monospace' fill='%239b6dff' font-weight='bold'>N</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23070b14'/><text y='78' x='8' font-size='72' font-family='monospace' fill='%2300d4ff' font-weight='bold'>N</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -22,8 +22,8 @@
   --card:       #0c1220;          /* card / panel background */
   --border:     #192233;          /* subtle border colour */
   --border2:    #243348;          /* slightly brighter border on hover */
-  --accent:     #9b6dff;          /* primary accent — violet */
-  --accent-dim: rgba(155,109,255,.1); /* tinted background for accent elements */
+  --accent:     #00d4ff;          /* primary accent — electric cyan */
+  --accent-dim: rgba(0,212,255,.08); /* tinted background for accent elements */
   --green:      #00e676;          /* success / shipped badge colour */
   --green-dim:  rgba(0,230,118,.08);
   --amber:      #ffb74d;          /* hackathon / warning badge colour */
@@ -48,7 +48,7 @@ body {
   overflow-x: hidden;            /* prevent horizontal scroll on mobile */
   -webkit-font-smoothing: antialiased;
 }
-::selection { background: rgba(155,109,255,.24); color: #fff; }
+::selection { background: rgba(0,212,255,.2); color: #fff; }
 
 ::-webkit-scrollbar       { width: 5px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
@@ -110,7 +110,7 @@ body {
   font-family: var(--sans);
 }
 .btn-primary { background: var(--accent); color: var(--bg); }
-.btn-primary:hover { background: #b391ff; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(155,109,255,.32); }
+.btn-primary:hover { background: #33ddff; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,212,255,.3); }
 
 .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border2); }
 .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
@@ -137,7 +137,7 @@ body {
   transition: all .2s;
   cursor: default;
 }
-.tag:hover { background: var(--accent-dim); color: var(--accent); border-color: rgba(155,109,255,.34); }
+.tag:hover { background: var(--accent-dim); color: var(--accent); border-color: rgba(0,212,255,.3); }
 
 .chip {
   font-family: var(--mono);
@@ -151,8 +151,8 @@ body {
   cursor: default;
   transition: all .2s;
 }
-.chip:hover { background: var(--accent-dim); color: var(--accent); border-color: rgba(155,109,255,.34); }
-.chip.hi    { background: var(--accent-dim); color: var(--accent); border-color: rgba(155,109,255,.3); } /* pre-highlighted chips */
+.chip:hover { background: var(--accent-dim); color: var(--accent); border-color: rgba(0,212,255,.3); }
+.chip.hi    { background: var(--accent-dim); color: var(--accent); border-color: rgba(0,212,255,.28); } /* pre-highlighted chips */
 
 /* --- Navigation --- */
 nav {
@@ -180,7 +180,7 @@ nav.scrolled {
 .nav-links a:hover,
 .nav-links a.active { color: var(--accent); }       /* .active set by JS on scroll */
 
-.nav-cta { padding: 6px 16px !important; border: 1px solid rgba(155,109,255,.42) !important; border-radius: 6px; color: var(--accent) !important; }
+.nav-cta { padding: 6px 16px !important; border: 1px solid rgba(0,212,255,.4) !important; border-radius: 6px; color: var(--accent) !important; }
 .nav-cta:hover { background: var(--accent-dim) !important; }
 
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; } /* hidden on desktop */
@@ -198,8 +198,8 @@ nav.scrolled {
 .grid-overlay {
   position: absolute; inset: 0; z-index: 0;
   background-image:
-    linear-gradient(rgba(155,109,255,.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(155,109,255,.03) 1px, transparent 1px);
+    linear-gradient(rgba(0,212,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,212,255,.025) 1px, transparent 1px);
   background-size: 56px 56px;                      /* subtle coordinate-grid texture */
 }
 .hero-vignette {
@@ -211,7 +211,7 @@ nav.scrolled {
 .live-badge {
   display: inline-flex; align-items: center; gap: 8px;
   font-family: var(--mono); font-size: 11.5px; color: var(--accent);
-  border: 1px solid rgba(155,109,255,.32); border-radius: 20px; padding: 5px 14px;
+  border: 1px solid rgba(0,212,255,.28); border-radius: 20px; padding: 5px 14px;
   margin-bottom: 30px; letter-spacing: .5px;
 }
 .live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: livepulse 2s ease infinite; }
@@ -257,14 +257,14 @@ nav.scrolled {
 }
 .feat-card::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, var(--accent) 0%, rgba(155,109,255,.24) 60%, transparent 100%); /* accent top border */
+  background: linear-gradient(90deg, var(--accent) 0%, rgba(0,212,255,.2) 60%, transparent 100%); /* accent top border */
 }
-.feat-card:hover { border-color: rgba(155,109,255,.45); box-shadow: 0 0 60px rgba(155,109,255,.1); }
+.feat-card:hover { border-color: rgba(0,212,255,.45); box-shadow: 0 0 60px rgba(0,212,255,.07); }
 
 .feat-inner { display: grid; grid-template-columns: 1fr 220px; gap: 40px; align-items: start; } /* text | drone diagram */
 
 .pbadge { display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 18px; }
-.pb-blue  { background: var(--accent-dim); color: var(--accent); border: 1px solid rgba(155,109,255,.28); }
+.pb-blue  { background: var(--accent-dim); color: var(--accent); border: 1px solid rgba(0,212,255,.25); }
 .pb-amber { background: var(--amber-dim);  color: var(--amber);  border: 1px solid rgba(255,183,77,.25); }
 .pb-green { background: var(--green-dim);  color: var(--green);  border: 1px solid rgba(0,230,118,.25); }
 
@@ -272,8 +272,8 @@ nav.scrolled {
 .psub   { font-family: var(--mono); font-size: 11.5px; color: var(--muted); margin-bottom: 26px; }
 
 .metrics4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-bottom: 26px; } /* 4 big numbers */
-.metric { background: rgba(155,109,255,.05); border: 1px solid rgba(155,109,255,.12); border-radius: 10px; padding: 16px 14px; transition: border-color .2s, background .2s; }
-.feat-card:hover .metric { border-color: rgba(155,109,255,.22); background: rgba(155,109,255,.08); } /* brightens on card hover */
+.metric { background: rgba(0,212,255,.04); border: 1px solid rgba(0,212,255,.1); border-radius: 10px; padding: 16px 14px; transition: border-color .2s, background .2s; }
+.feat-card:hover .metric { border-color: rgba(0,212,255,.18); background: rgba(0,212,255,.06); } /* brightens on card hover */
 .m-num   { font-family: var(--mono); font-size: 26px; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 7px; }
 .m-label { font-size: 11px; color: var(--muted); line-height: 1.45; }
 
@@ -316,56 +316,18 @@ nav.scrolled {
 .atext .hl     { color: var(--accent); font-weight: 600; }
 .astats        { display: flex; flex-direction: column; gap: 14px; }
 .astat         { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 18px 22px; transition: border-color .22s; }
-.astat:hover   { border-color: rgba(155,109,255,.4); }
+.astat:hover   { border-color: rgba(0,212,255,.4); }
 .astat-n       { font-family: var(--mono); font-size: 26px; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 4px; }
 .astat-l       { font-size: 12.5px; color: var(--muted); }
 
 /* --- Skills --- */
 #skills      { background: linear-gradient(to bottom, var(--bg), var(--bg2)); }
-.skills-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-}
-.sgroup {
-  display: grid;
-  grid-template-columns: 210px minmax(0, 1fr);
-  align-items: start;
-  gap: 18px;
-  padding: 0;
-}
-.sgroup-title {
-  font-family: var(--mono);
-  font-size: 10.5px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--accent);
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  padding-top: 10px;
-}
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 20px; }  /* auto-fills columns */
+.sgroup      { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 22px; transition: border-color .22s; }
+.sgroup:hover { border-color: var(--border2); }
+.sgroup-title { font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 7px; }
 .sgroup-title i { font-size: 13px; }
-.chips {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 10px;
-  overflow-x: auto;
-  overflow-y: hidden;
-  padding: 6px 2px 8px;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-}
-.chips::-webkit-scrollbar { display: none; }
-.chip {
-  flex: 0 0 auto;
-}
-.chip.hi {
-  background: rgba(255,255,255,.04);
-  color: var(--text);
-  border-color: var(--border);
-}
+.chips       { display: flex; flex-wrap: wrap; gap: 7px; }
 
 /* --- Experience timeline --- */
 #experience { background: var(--bg2); }
@@ -437,7 +399,7 @@ nav.scrolled {
   border-radius: var(--r); color: var(--text); text-decoration: none; font-size: 14.5px; font-weight: 500; transition: all .24s;
 }
 .clink i      { font-size: 17px; }
-.clink:hover  { border-color: var(--accent); color: var(--accent); transform: translateY(-3px); box-shadow: 0 10px 28px rgba(155,109,255,.14); }
+.clink:hover  { border-color: var(--accent); color: var(--accent); transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,212,255,.1); }
 
 /* --- Footer --- */
 footer   { background: var(--bg); border-top: 1px solid var(--border); padding: 22px 0; text-align: center; }
@@ -453,8 +415,6 @@ footer   { background: var(--bg); border-top: 1px solid var(--border); padding: 
   .about-grid  { grid-template-columns: 1fr; gap: 48px; }
   .astats      { flex-direction: row; flex-wrap: wrap; }
   .astat       { flex: 1; min-width: 130px; }
-  .sgroup      { grid-template-columns: 1fr; gap: 10px; }
-  .sgroup-title { padding-top: 0; }
   .timeline    { padding-left: 34px; }
   .timeline::before { left: 0; transform: none; }
   .titem       { width: auto; padding-left: 0; padding-right: 0; }
@@ -526,9 +486,9 @@ footer   { background: var(--bg); border-top: 1px solid var(--border); padding: 
         <!-- UPDATE: replace # with your resume URL -->
         <a href="#" class="btn btn-ghost"><i class="fas fa-file-code"></i> Resume</a>
         <!-- UPDATE: replace with your GitHub URL -->
-        <a href="https://github.com/Nitin3560" target="_blank" class="btn btn-icon" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://github.com/" target="_blank" class="btn btn-icon" title="GitHub"><i class="fab fa-github"></i></a>
         <!-- UPDATE: replace with your LinkedIn URL -->
-        <a href="https://www.linkedin.com/in/nitin-singh-rathore" target="_blank" class="btn btn-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://linkedin.com/in/" target="_blank" class="btn btn-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
       </div>
       <div class="hero-stats">
         <div class="hstat"><span class="hstat-n">2+</span><span class="hstat-l">Years Industry Exp.</span></div>
@@ -590,36 +550,38 @@ footer   { background: var(--bg); border-top: 1px solid var(--border); padding: 
             <span class="tag">Cascaded PID</span><span class="tag">Multi-Seed Eval</span><span class="tag">Simulation</span>
           </div>
           <div class="pactions">
-            <a href="uav-case-study.html" class="btn btn-ghost" style="font-size:13px;padding:9px 19px;"><i class="fas fa-file-alt"></i> Case Study</a>
+            <!-- UPDATE: replace # with your GitHub repo URL -->
+            <a href="#" class="btn btn-primary" style="font-size:13px;padding:9px 19px;"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#" class="btn btn-ghost"   style="font-size:13px;padding:9px 19px;"><i class="fas fa-file-alt"></i> Case Study</a>
           </div>
         </div>
 
         <!-- Animated drone formation diagram -->
         <div class="drone-viz">
           <svg viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <line x1="0"   y1="110" x2="220" y2="110" stroke="rgba(155,109,255,.06)" stroke-width="1"/>
-            <line x1="110" y1="0"   x2="110" y2="220" stroke="rgba(155,109,255,.06)" stroke-width="1"/>
-            <line x1="0"   y1="55"  x2="220" y2="55"  stroke="rgba(155,109,255,.04)" stroke-width="1" stroke-dasharray="4 5"/>
-            <line x1="0"   y1="165" x2="220" y2="165" stroke="rgba(155,109,255,.04)" stroke-width="1" stroke-dasharray="4 5"/>
-            <line x1="55"  y1="0"   x2="55"  y2="220" stroke="rgba(155,109,255,.04)" stroke-width="1" stroke-dasharray="4 5"/>
-            <line x1="165" y1="0"   x2="165" y2="220" stroke="rgba(155,109,255,.04)" stroke-width="1" stroke-dasharray="4 5"/>
-            <line x1="110" y1="42"  x2="178" y2="110" stroke="rgba(155,109,255,.22)" stroke-width="1.2" stroke-dasharray="6 4"/>
-            <line x1="178" y1="110" x2="110" y2="178" stroke="rgba(155,109,255,.22)" stroke-width="1.2" stroke-dasharray="6 4"/>
-            <line x1="110" y1="178" x2="42"  y2="110" stroke="rgba(155,109,255,.22)" stroke-width="1.2" stroke-dasharray="6 4"/>
-            <line x1="42"  y1="110" x2="110" y2="42"  stroke="rgba(155,109,255,.22)" stroke-width="1.2" stroke-dasharray="6 4"/>
-            <line x1="110" y1="42"  x2="110" y2="178" stroke="rgba(155,109,255,.09)" stroke-width="1" stroke-dasharray="3 6"/>
-            <line x1="42"  y1="110" x2="178" y2="110" stroke="rgba(155,109,255,.09)" stroke-width="1" stroke-dasharray="3 6"/>
-            <circle cx="110" cy="110" r="15" fill="rgba(155,109,255,.07)" stroke="rgba(155,109,255,.45)" stroke-width="1.5"/>
-            <circle cx="110" cy="110" r="5"  fill="#9b6dff"/>
-            <text x="110" y="107" font-family="JetBrains Mono,monospace" font-size="7.5" fill="rgba(155,109,255,.9)" text-anchor="middle">CTRL</text>
-            <circle cx="110" cy="110" r="22" fill="none" stroke="rgba(155,109,255,.28)" stroke-width="1">
+            <line x1="0"   y1="110" x2="220" y2="110" stroke="rgba(0,212,255,.06)" stroke-width="1"/>
+            <line x1="110" y1="0"   x2="110" y2="220" stroke="rgba(0,212,255,.06)" stroke-width="1"/>
+            <line x1="0"   y1="55"  x2="220" y2="55"  stroke="rgba(0,212,255,.04)" stroke-width="1" stroke-dasharray="4 5"/>
+            <line x1="0"   y1="165" x2="220" y2="165" stroke="rgba(0,212,255,.04)" stroke-width="1" stroke-dasharray="4 5"/>
+            <line x1="55"  y1="0"   x2="55"  y2="220" stroke="rgba(0,212,255,.04)" stroke-width="1" stroke-dasharray="4 5"/>
+            <line x1="165" y1="0"   x2="165" y2="220" stroke="rgba(0,212,255,.04)" stroke-width="1" stroke-dasharray="4 5"/>
+            <line x1="110" y1="42"  x2="178" y2="110" stroke="rgba(0,212,255,.22)" stroke-width="1.2" stroke-dasharray="6 4"/>
+            <line x1="178" y1="110" x2="110" y2="178" stroke="rgba(0,212,255,.22)" stroke-width="1.2" stroke-dasharray="6 4"/>
+            <line x1="110" y1="178" x2="42"  y2="110" stroke="rgba(0,212,255,.22)" stroke-width="1.2" stroke-dasharray="6 4"/>
+            <line x1="42"  y1="110" x2="110" y2="42"  stroke="rgba(0,212,255,.22)" stroke-width="1.2" stroke-dasharray="6 4"/>
+            <line x1="110" y1="42"  x2="110" y2="178" stroke="rgba(0,212,255,.09)" stroke-width="1" stroke-dasharray="3 6"/>
+            <line x1="42"  y1="110" x2="178" y2="110" stroke="rgba(0,212,255,.09)" stroke-width="1" stroke-dasharray="3 6"/>
+            <circle cx="110" cy="110" r="15" fill="rgba(0,212,255,.07)" stroke="rgba(0,212,255,.45)" stroke-width="1.5"/>
+            <circle cx="110" cy="110" r="5"  fill="#00d4ff"/>
+            <text x="110" y="107" font-family="JetBrains Mono,monospace" font-size="7.5" fill="rgba(0,212,255,.9)" text-anchor="middle">CTRL</text>
+            <circle cx="110" cy="110" r="22" fill="none" stroke="rgba(0,212,255,.28)" stroke-width="1">
               <animate attributeName="r"       values="22;65;22"  dur="3.2s" repeatCount="indefinite"/>
               <animate attributeName="opacity" values="0.4;0;0.4" dur="3.2s" repeatCount="indefinite"/>
             </circle>
-            <g><circle cx="110" cy="42" r="13" fill="rgba(155,109,255,.07)" stroke="#9b6dff" stroke-width="1.5"><animate attributeName="r" values="13;15;13" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;.65;1" dur="3s" repeatCount="indefinite"/></circle><circle cx="110" cy="42" r="4" fill="#9b6dff"/><line x1="103" y1="35" x2="117" y2="49" stroke="#9b6dff" stroke-width="1" opacity=".5"/><line x1="117" y1="35" x2="103" y2="49" stroke="#9b6dff" stroke-width="1" opacity=".5"/><text x="110" y="19" font-family="JetBrains Mono,monospace" font-size="8" fill="rgba(155,109,255,.7)" text-anchor="middle">D1</text></g>
-            <g><circle cx="178" cy="110" r="13" fill="rgba(155,109,255,.07)" stroke="#9b6dff" stroke-width="1.5"><animate attributeName="r" values="13;15;13" dur="3.6s" begin=".6s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;.65;1" dur="3.6s" begin=".6s" repeatCount="indefinite"/></circle><circle cx="178" cy="110" r="4" fill="#9b6dff"/><line x1="171" y1="103" x2="185" y2="117" stroke="#9b6dff" stroke-width="1" opacity=".5"/><line x1="185" y1="103" x2="171" y2="117" stroke="#9b6dff" stroke-width="1" opacity=".5"/><text x="201" y="114" font-family="JetBrains Mono,monospace" font-size="8" fill="rgba(155,109,255,.7)" text-anchor="middle">D2</text></g>
-            <g><circle cx="110" cy="178" r="13" fill="rgba(155,109,255,.07)" stroke="#9b6dff" stroke-width="1.5"><animate attributeName="r" values="13;15;13" dur="2.9s" begin="1.1s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;.65;1" dur="2.9s" begin="1.1s" repeatCount="indefinite"/></circle><circle cx="110" cy="178" r="4" fill="#9b6dff"/><line x1="103" y1="171" x2="117" y2="185" stroke="#9b6dff" stroke-width="1" opacity=".5"/><line x1="117" y1="171" x2="103" y2="185" stroke="#9b6dff" stroke-width="1" opacity=".5"/><text x="110" y="202" font-family="JetBrains Mono,monospace" font-size="8" fill="rgba(155,109,255,.7)" text-anchor="middle">D3</text></g>
-            <g><circle cx="42" cy="110" r="13" fill="rgba(155,109,255,.07)" stroke="#9b6dff" stroke-width="1.5"><animate attributeName="r" values="13;15;13" dur="4.1s" begin="1.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;.65;1" dur="4.1s" begin="1.6s" repeatCount="indefinite"/></circle><circle cx="42" cy="110" r="4" fill="#9b6dff"/><line x1="35" y1="103" x2="49" y2="117" stroke="#9b6dff" stroke-width="1" opacity=".5"/><line x1="49" y1="103" x2="35" y2="117" stroke="#9b6dff" stroke-width="1" opacity=".5"/><text x="19" y="114" font-family="JetBrains Mono,monospace" font-size="8" fill="rgba(155,109,255,.7)" text-anchor="middle">D4</text></g>
+            <g><circle cx="110" cy="42" r="13" fill="rgba(0,212,255,.07)" stroke="#00d4ff" stroke-width="1.5"><animate attributeName="r" values="13;15;13" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;.65;1" dur="3s" repeatCount="indefinite"/></circle><circle cx="110" cy="42" r="4" fill="#00d4ff"/><line x1="103" y1="35" x2="117" y2="49" stroke="#00d4ff" stroke-width="1" opacity=".5"/><line x1="117" y1="35" x2="103" y2="49" stroke="#00d4ff" stroke-width="1" opacity=".5"/><text x="110" y="19" font-family="JetBrains Mono,monospace" font-size="8" fill="rgba(0,212,255,.7)" text-anchor="middle">D1</text></g>
+            <g><circle cx="178" cy="110" r="13" fill="rgba(0,212,255,.07)" stroke="#00d4ff" stroke-width="1.5"><animate attributeName="r" values="13;15;13" dur="3.6s" begin=".6s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;.65;1" dur="3.6s" begin=".6s" repeatCount="indefinite"/></circle><circle cx="178" cy="110" r="4" fill="#00d4ff"/><line x1="171" y1="103" x2="185" y2="117" stroke="#00d4ff" stroke-width="1" opacity=".5"/><line x1="185" y1="103" x2="171" y2="117" stroke="#00d4ff" stroke-width="1" opacity=".5"/><text x="201" y="114" font-family="JetBrains Mono,monospace" font-size="8" fill="rgba(0,212,255,.7)" text-anchor="middle">D2</text></g>
+            <g><circle cx="110" cy="178" r="13" fill="rgba(0,212,255,.07)" stroke="#00d4ff" stroke-width="1.5"><animate attributeName="r" values="13;15;13" dur="2.9s" begin="1.1s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;.65;1" dur="2.9s" begin="1.1s" repeatCount="indefinite"/></circle><circle cx="110" cy="178" r="4" fill="#00d4ff"/><line x1="103" y1="171" x2="117" y2="185" stroke="#00d4ff" stroke-width="1" opacity=".5"/><line x1="117" y1="171" x2="103" y2="185" stroke="#00d4ff" stroke-width="1" opacity=".5"/><text x="110" y="202" font-family="JetBrains Mono,monospace" font-size="8" fill="rgba(0,212,255,.7)" text-anchor="middle">D3</text></g>
+            <g><circle cx="42" cy="110" r="13" fill="rgba(0,212,255,.07)" stroke="#00d4ff" stroke-width="1.5"><animate attributeName="r" values="13;15;13" dur="4.1s" begin="1.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;.65;1" dur="4.1s" begin="1.6s" repeatCount="indefinite"/></circle><circle cx="42" cy="110" r="4" fill="#00d4ff"/><line x1="35" y1="103" x2="49" y2="117" stroke="#00d4ff" stroke-width="1" opacity=".5"/><line x1="49" y1="103" x2="35" y2="117" stroke="#00d4ff" stroke-width="1" opacity=".5"/><text x="19" y="114" font-family="JetBrains Mono,monospace" font-size="8" fill="rgba(0,212,255,.7)" text-anchor="middle">D4</text></g>
           </svg>
         </div>
       </div>
@@ -639,7 +601,8 @@ footer   { background: var(--bg); border-top: 1px solid var(--border); padding: 
         <p class="pdesc">FastAPI backend ingesting logs, metrics, and deployment events across <strong>10+ microservices</strong>. Normalized data pipeline standardizes <strong>5+ heterogeneous telemetry formats</strong> (Prometheus, structured JSON, raw log streams). Root-cause engine combines temporal correlation, Z-score anomaly strength, and <strong>dependency graph traversal</strong> to rank multi-factor diagnoses — surfacing the correct fault in the top-3 results <strong>87% of the time</strong>.</p>
         <div class="tags"><span class="tag">FastAPI</span><span class="tag">OpenTelemetry</span><span class="tag">Python</span><span class="tag">Z-Score</span><span class="tag">Graph Traversal</span><span class="tag">Microservices</span></div>
         <div class="pactions">
-          <a href="https://github.com/Nitin3560/traceback-ai" target="_blank" class="btn btn-amber" style="font-size:12.5px;padding:8px 17px;"><i class="fab fa-github"></i> GitHub</a>
+          <!-- UPDATE: replace # with your GitHub repo URL -->
+          <a href="#" class="btn btn-amber" style="font-size:12.5px;padding:8px 17px;"><i class="fab fa-github"></i> GitHub</a>
         </div>
       </div>
 
@@ -655,7 +618,8 @@ footer   { background: var(--bg); border-top: 1px solid var(--border); padding: 
         <p class="pdesc">React/TypeScript frontend + FastAPI backend deployed on <strong>GCP Cloud Run</strong>, handling real active user sessions. LlamaIndex vector pipeline chunks and indexes PDF/TXT documents for semantic retrieval. Incremental embedding logic skips unchanged chunks on re-index — cutting re-index time by <strong>45%</strong>. Ollama integration enables <strong>fully offline LLM inference</strong>, eliminating cloud API costs for local deployments. Sub-2-second query response on commodity hardware.</p>
         <div class="tags"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">FastAPI</span><span class="tag">GCP</span><span class="tag">LlamaIndex</span><span class="tag">Ollama</span><span class="tag">Vector Search</span></div>
         <div class="pactions">
-          <a href="https://github.com/Nitin3560/JobPrep-AI-Conversational-RAG-Document-Assistant" target="_blank" class="btn btn-green" style="font-size:12.5px;padding:8px 17px;"><i class="fab fa-github"></i> GitHub</a>
+          <!-- UPDATE: replace # with your GitHub repo URL -->
+          <a href="#" class="btn btn-green" style="font-size:12.5px;padding:8px 17px;"><i class="fab fa-github"></i> GitHub</a>
         </div>
       </div>
     </div>
@@ -758,9 +722,9 @@ footer   { background: var(--bg); border-top: 1px solid var(--border); padding: 
     <div class="clinks">
       <a href="mailto:nxr3560@mavs.uta.edu" class="clink"><i class="fas fa-envelope"></i> nxr3560@mavs.uta.edu</a>
       <!-- UPDATE: replace with your GitHub URL -->
-      <a href="https://github.com/Nitin3560" target="_blank" class="clink"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://github.com/" target="_blank" class="clink"><i class="fab fa-github"></i> GitHub</a>
       <!-- UPDATE: replace with your LinkedIn URL -->
-      <a href="https://www.linkedin.com/in/nitin-singh-rathore" target="_blank" class="clink"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+      <a href="https://linkedin.com/in/" target="_blank" class="clink"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
     </div>
   </div>
 </section>
@@ -820,7 +784,7 @@ footer   { background: var(--bg); border-top: 1px solid var(--border); padding: 
 
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(155,109,255,${alpha})`;
+      ctx.fillStyle = `rgba(0,212,255,${alpha})`;
       ctx.fill();
 
       // draw faint lines to nearby particles — simulates signal mesh
@@ -832,7 +796,7 @@ footer   { background: var(--bg); border-top: 1px solid var(--border); padding: 
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(q.x, q.y);
-          ctx.strokeStyle = `rgba(155,109,255,${(1 - d / 130) * .1})`; // fades with distance
+          ctx.strokeStyle = `rgba(0,212,255,${(1 - d / 130) * .1})`; // fades with distance
           ctx.lineWidth = .6;
           ctx.stroke();
         }
