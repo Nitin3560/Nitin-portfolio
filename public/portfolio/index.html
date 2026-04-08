@@ -214,13 +214,20 @@
       cursor: none;
     }
 
-    /* subtle grid bg */
+    /* snippet-inspired grid bg */
     .grid-overlay {
       position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background-color: var(--bg);
       background-image:
-        linear-gradient(rgba(0,212,255,.018) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,212,255,.018) 1px, transparent 1px);
-      background-size: 60px 60px;
+        linear-gradient(to right, rgba(240,240,240,.06) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(240,240,240,.06) 1px, transparent 1px);
+      background-size: 6rem 4rem;
+    }
+    .grid-overlay::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle 800px at 100% 200px, rgba(213,197,255,.22), transparent 55%);
     }
 
     /* ── SCROLL HINT ── */
