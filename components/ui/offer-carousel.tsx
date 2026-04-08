@@ -33,7 +33,7 @@ const OfferCard = React.forwardRef<HTMLAnchorElement, OfferCardProps>(({ offer }
   <motion.a
     ref={ref}
     href={offer.href}
-    className="group relative h-[380px] w-[300px] flex-shrink-0 snap-start overflow-hidden rounded-2xl border border-zinc-200/70 bg-white/90 shadow-[0_18px_40px_rgba(15,23,42,0.08)]"
+    className="group relative h-[380px] w-[280px] flex-shrink-0 snap-start overflow-hidden rounded-2xl border border-zinc-200/70 bg-white/90 shadow-[0_18px_40px_rgba(15,23,42,0.08)] sm:w-[300px]"
     whileHover={{ y: -8 }}
     transition={{ type: "spring", stiffness: 300, damping: 20 }}
     style={{ perspective: "1000px" }}
@@ -107,7 +107,7 @@ const OfferCarousel = React.forwardRef<HTMLDivElement, OfferCarouselProps>(
       <div ref={ref} className={cn("group relative w-full", className)} {...props}>
         <button
           onClick={() => scroll("left")}
-          className="absolute left-0 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-zinc-200 bg-white/80 text-zinc-800 opacity-0 shadow-sm backdrop-blur-sm transition-opacity duration-300 hover:bg-white group-hover:opacity-100 disabled:opacity-0"
+          className="absolute left-0 top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-zinc-200 bg-white/90 text-zinc-800 opacity-0 shadow-sm backdrop-blur-sm transition-opacity duration-300 hover:bg-white md:flex md:group-hover:opacity-100 disabled:opacity-0"
           aria-label="Scroll Left"
           type="button"
         >
@@ -116,7 +116,7 @@ const OfferCarousel = React.forwardRef<HTMLDivElement, OfferCarouselProps>(
 
         <div
           ref={scrollContainerRef}
-          className="flex snap-x snap-mandatory space-x-6 overflow-x-auto pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="flex snap-x snap-mandatory space-x-6 overflow-x-auto px-1 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {offers.map((offer) => (
             <OfferCard key={offer.id} offer={offer} />
@@ -125,7 +125,7 @@ const OfferCarousel = React.forwardRef<HTMLDivElement, OfferCarouselProps>(
 
         <button
           onClick={() => scroll("right")}
-          className="absolute right-0 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-zinc-200 bg-white/80 text-zinc-800 opacity-0 shadow-sm backdrop-blur-sm transition-opacity duration-300 hover:bg-white group-hover:opacity-100 disabled:opacity-0"
+          className="absolute right-0 top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-zinc-200 bg-white/90 text-zinc-800 opacity-0 shadow-sm backdrop-blur-sm transition-opacity duration-300 hover:bg-white md:flex md:group-hover:opacity-100 disabled:opacity-0"
           aria-label="Scroll Right"
           type="button"
         >
