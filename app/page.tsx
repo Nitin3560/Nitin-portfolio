@@ -4,12 +4,37 @@ import { ProjectPreview } from "@/components/project-preview";
 import { Section } from "@/components/section";
 import { SiteHeader } from "@/components/site-header";
 import { ExperienceCard } from "@/components/experience-card";
-import OfferCarouselDemo from "@/components/ui/demo";
 import { work } from "@/lib/content";
 import { experience } from "@/lib/experience";
 
 const featuredProjects = work.slice(0, 2);
 const featuredExperience = experience.filter((item) => item.featured).slice(0, 2);
+const skills = [
+  {
+    title: "Backend Systems",
+    description: "APIs, data models, and production behavior designed for clarity and reliability.",
+  },
+  {
+    title: "RAG & Evaluation",
+    description: "Retrieval pipelines and measurement loops that make AI features easier to trust.",
+  },
+  {
+    title: "CI/CD & Delivery",
+    description: "Safer releases, repeatable deployments, and workflows that reduce production surprises.",
+  },
+  {
+    title: "Observability",
+    description: "Metrics, tracing, and debugging practices that keep systems understandable under load.",
+  },
+  {
+    title: "Fault Tolerance",
+    description: "Graceful handling of degraded conditions across backend services and research systems.",
+  },
+  {
+    title: "Technical Communication",
+    description: "Writing and structure that help recruiters and engineers both understand the work quickly.",
+  },
+];
 
 export default function HomePage() {
   return (
@@ -96,8 +121,16 @@ export default function HomePage() {
           eyebrow="Skills"
           title="Core strengths presented as a quick visual scan"
         >
-          <div className="mt-6">
-            <OfferCarouselDemo />
+          <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {skills.map((skill) => (
+              <article
+                key={skill.title}
+                className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm"
+              >
+                <h3 className="text-base font-semibold text-zinc-950">{skill.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-zinc-600">{skill.description}</p>
+              </article>
+            ))}
           </div>
         </Section>
 
