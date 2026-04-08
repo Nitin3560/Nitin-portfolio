@@ -4,6 +4,7 @@
 // --- Hero canvas: animated particle network ---
 (function () {
   const canvas = document.getElementById('hero-canvas');
+  if (!canvas) return;
   const ctx    = canvas.getContext('2d');
   let pts = [];
 
