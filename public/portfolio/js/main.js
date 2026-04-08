@@ -74,9 +74,13 @@
 
 // --- Navbar: frosted-glass background after scrolling ---
 const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 20); // .scrolled adds backdrop-filter
-}, { passive: true });
+function syncScrollState() {
+  const isScrolled = window.scrollY > 20;
+  navbar.classList.toggle('scrolled', isScrolled); // .scrolled adds backdrop-filter
+  document.body.classList.toggle('scrolled', window.scrollY > 8); // hides scroll hint once movement starts
+}
+window.addEventListener('scroll', syncScrollState, { passive: true });
+syncScrollState();
 
 // --- Mobile hamburger menu ---
 const hbg     = document.getElementById('hbg');
