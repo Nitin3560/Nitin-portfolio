@@ -3,399 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nitin Singh Rathore — Backend Engineer & UAV Systems Researcher</title>
+  <title>Nitin Singh Rathore Backend Engineer and UAV Systems Researcher</title>
   <meta name="description" content="Backend engineer, systems researcher, and builder. MS CS at UT Arlington. Specializing in distributed systems, fault-tolerant control, and UAV swarm coordination." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23070b14'/><text y='78' x='8' font-size='72' font-family='monospace' fill='%2300d4ff' font-weight='bold'>N</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23070b14'/><text y='78' x='8' font-size='72' font-family='monospace' fill='%239b6dff' font-weight='bold'>N</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <style>
-/* styles.css — Nitin Singh Rathore portfolio
-   To retheme: only edit the :root variables below */
-
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-:root {
-  --bg:         #070b14;          /* page background */
-  --bg2:        #080e1a;          /* slightly lighter bg for alternating sections */
-  --card:       #0c1220;          /* card / panel background */
-  --border:     #192233;          /* subtle border colour */
-  --border2:    #243348;          /* slightly brighter border on hover */
-  --accent:     #00d4ff;          /* primary accent — electric cyan */
-  --accent-dim: rgba(0,212,255,.08); /* tinted background for accent elements */
-  --green:      #00e676;          /* success / shipped badge colour */
-  --green-dim:  rgba(0,230,118,.08);
-  --amber:      #ffb74d;          /* hackathon / warning badge colour */
-  --amber-dim:  rgba(255,183,77,.08);
-  --text:       #d8e4f0;          /* primary text */
-  --muted:      #6b7a99;          /* secondary / subdued text */
-  --dim:        #3a4560;          /* very quiet text (footer, hints) */
-  --mono:       'JetBrains Mono', 'Fira Code', monospace;
-  --sans:       'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --nav-h:      68px;             /* navbar height — used for scroll offset */
-  --r:          12px;             /* standard border-radius */
-  --r-lg:       18px;             /* larger border-radius for cards */
-  --ease:       cubic-bezier(.4,0,.2,1);
-}
-
-html { scroll-behavior: smooth; font-size: 16px; }
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--sans);
-  line-height: 1.65;
-  overflow-x: hidden;            /* prevent horizontal scroll on mobile */
-  -webkit-font-smoothing: antialiased;
-}
-::selection { background: rgba(0,212,255,.2); color: #fff; }
-
-::-webkit-scrollbar       { width: 5px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--accent); }
-
-/* --- Layout helpers --- */
-.container  { max-width: 1080px; margin: 0 auto; padding: 0 24px; } /* centers content */
-.section    { padding: 100px 0; }                                    /* vertical section spacing */
-.sec-header { margin-bottom: 56px; }
-
-.overline {
-  display: block;
-  font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 10px;
-}
-.sec-title {
-  font-size: clamp(26px, 4.5vw, 38px); /* fluid: scales between 26–38px */
-  font-weight: 800;
-  color: #fff;
-  line-height: 1.15;
-  margin-bottom: 14px;
-  letter-spacing: -.5px;
-}
-.sec-sub { color: var(--muted); font-size: 15px; max-width: 480px; }
-
-/* --- Scroll fade-in --- */
-.fu {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity .65s var(--ease), transform .65s var(--ease); /* animates in from below */
-}
-.fu.vis { opacity: 1; transform: none; }  /* JS adds .vis when element enters viewport */
-.d1 { transition-delay: .1s; }            /* stagger delays for grouped elements */
-.d2 { transition-delay: .2s; }
-.d3 { transition-delay: .3s; }
-.d4 { transition-delay: .4s; }
-.d5 { transition-delay: .5s; }
-
-/* --- Buttons --- */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 11px 22px;
-  border-radius: 8px;
-  font-size: 13.5px;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all .22s var(--ease);
-  border: none;
-  white-space: nowrap;
-  font-family: var(--sans);
-}
-.btn-primary { background: var(--accent); color: var(--bg); }
-.btn-primary:hover { background: #33ddff; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,212,255,.3); }
-
-.btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border2); }
-.btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
-
-.btn-icon { padding: 11px 15px; background: transparent; border: 1px solid var(--border2); color: var(--muted); border-radius: 8px; }
-.btn-icon:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
-
-.btn-amber { background: transparent; color: var(--amber); border: 1px solid rgba(255,183,77,.35); }
-.btn-amber:hover { background: var(--amber-dim); transform: translateY(-2px); }
-
-.btn-green { background: transparent; color: var(--green); border: 1px solid rgba(0,230,118,.35); }
-.btn-green:hover { background: var(--green-dim); transform: translateY(-2px); }
-
-/* --- Tech tags & skill chips --- */
-.tag {
-  font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 500;
-  padding: 4px 10px;
-  border-radius: 5px;
-  background: rgba(255,255,255,.04);
-  color: var(--muted);
-  border: 1px solid var(--border);
-  transition: all .2s;
-  cursor: default;
-}
-.tag:hover { background: var(--accent-dim); color: var(--accent); border-color: rgba(0,212,255,.3); }
-
-.chip {
-  font-family: var(--mono);
-  font-size: 11.5px;
-  font-weight: 500;
-  padding: 5px 11px;
-  border-radius: 6px;
-  background: rgba(255,255,255,.04);
-  color: var(--text);
-  border: 1px solid var(--border);
-  cursor: default;
-  transition: all .2s;
-}
-.chip:hover { background: var(--accent-dim); color: var(--accent); border-color: rgba(0,212,255,.3); }
-.chip.hi    { background: var(--accent-dim); color: var(--accent); border-color: rgba(0,212,255,.28); } /* pre-highlighted chips */
-
-/* --- Navigation --- */
-nav {
-  position: fixed; top: 0; left: 0; right: 0;
-  z-index: 100;
-  height: var(--nav-h);
-  border-bottom: 1px solid transparent;            /* border appears only after scroll */
-  transition: background .3s, border-color .3s, backdrop-filter .3s;
-}
-nav.scrolled {
-  background: rgba(7,11,20,.92);                   /* frosted glass effect on scroll */
-  backdrop-filter: blur(20px);
-  border-bottom-color: var(--border);
-}
-.nav-inner {
-  max-width: 1080px; margin: 0 auto; padding: 0 24px;
-  height: 100%;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.nav-logo { font-family: var(--mono); font-size: 19px; font-weight: 700; color: var(--accent); text-decoration: none; letter-spacing: -1px; }
-.nav-logo span { color: var(--muted); font-weight: 400; }
-
-.nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
-.nav-links a { font-size: 13px; font-weight: 500; color: var(--muted); text-decoration: none; font-family: var(--mono); transition: color .2s; letter-spacing: .3px; }
-.nav-links a:hover,
-.nav-links a.active { color: var(--accent); }       /* .active set by JS on scroll */
-
-.nav-cta { padding: 6px 16px !important; border: 1px solid rgba(0,212,255,.4) !important; border-radius: 6px; color: var(--accent) !important; }
-.nav-cta:hover { background: var(--accent-dim) !important; }
-
-.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; } /* hidden on desktop */
-.hamburger span { display: block; width: 21px; height: 2px; background: var(--text); border-radius: 2px; transition: .25s; }
-
-.mob-menu { display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; background: rgba(7,11,20,.97); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 20px 24px; flex-direction: column; gap: 0; z-index: 99; }
-.mob-menu.open { display: flex; }                   /* toggled by hamburger click */
-.mob-menu a { color: var(--text); text-decoration: none; font-size: 15px; font-weight: 500; padding: 12px 0; border-bottom: 1px solid var(--border); }
-.mob-menu a:last-child { border-bottom: none; }
-
-/* --- Hero --- */
-#hero { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; padding-top: var(--nav-h); }
-#hero-canvas { position: absolute; inset: 0; z-index: 0; }  /* canvas sits behind all content */
-
-.grid-overlay {
-  position: absolute; inset: 0; z-index: 0;
-  background-image:
-    linear-gradient(rgba(0,212,255,.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,212,255,.025) 1px, transparent 1px);
-  background-size: 56px 56px;                      /* subtle coordinate-grid texture */
-}
-.hero-vignette {
-  position: absolute; inset: 0; z-index: 1;
-  background: radial-gradient(ellipse 80% 80% at 50% 50%, transparent 20%, var(--bg) 80%); /* fades canvas edges */
-}
-.hero-content { position: relative; z-index: 2; padding: 40px 0 100px; }
-
-.live-badge {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-family: var(--mono); font-size: 11.5px; color: var(--accent);
-  border: 1px solid rgba(0,212,255,.28); border-radius: 20px; padding: 5px 14px;
-  margin-bottom: 30px; letter-spacing: .5px;
-}
-.live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: livepulse 2s ease infinite; }
-@keyframes livepulse {
-  0%,100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0,230,118,.5); }
-  50%      { opacity: .7; box-shadow: 0 0 0 6px rgba(0,230,118,0); } /* expanding ring then fades */
-}
-
-.hero-name { font-size: clamp(44px, 8.5vw, 82px); font-weight: 800; color: #fff; line-height: 1.02; letter-spacing: -2.5px; margin-bottom: 6px; }
-.hero-name .ac { color: var(--accent); }
-
-.hero-role { font-family: var(--mono); font-size: clamp(13px, 2vw, 16px); color: var(--muted); margin-bottom: 26px; font-weight: 500; }
-.hero-role .sep { color: var(--accent); margin: 0 10px; opacity: .5; }
-
-.hero-tagline { font-size: clamp(15px, 1.8vw, 17.5px); color: #8fa0bc; max-width: 560px; line-height: 1.75; margin-bottom: 44px; }
-.hero-tagline strong { color: var(--text); font-weight: 600; }
-
-.hero-ctas { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 60px; }
-
-.hero-stats { display: flex; gap: 36px; flex-wrap: wrap; padding-top: 32px; border-top: 1px solid var(--border); }
-.hstat { display: flex; flex-direction: column; gap: 3px; }
-.hstat-n { font-family: var(--mono); font-size: 22px; font-weight: 700; color: var(--accent); line-height: 1; }
-.hstat-l { font-size: 11.5px; color: var(--muted); }
-
-.scroll-hint {
-  position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
-  display: flex; flex-direction: column; align-items: center; gap: 6px;
-  font-family: var(--mono); font-size: 10px; color: var(--dim); z-index: 2;
-  animation: bobble 2.2s ease infinite;
-}
-@keyframes bobble {
-  0%,100% { transform: translateX(-50%) translateY(0); }
-  50%      { transform: translateX(-50%) translateY(7px); }  /* gentle bounce */
-}
-
-/* --- Projects --- */
-#projects { background: linear-gradient(to bottom, var(--bg), var(--bg2) 50%, var(--bg)); }
-
-.feat-card {
-  background: var(--card); border: 1px solid var(--border); border-radius: var(--r-lg);
-  padding: 40px; margin-bottom: 24px; position: relative; overflow: hidden;
-  transition: border-color .3s, box-shadow .3s;
-}
-.feat-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, var(--accent) 0%, rgba(0,212,255,.2) 60%, transparent 100%); /* accent top border */
-}
-.feat-card:hover { border-color: rgba(0,212,255,.45); box-shadow: 0 0 60px rgba(0,212,255,.07); }
-
-.feat-inner { display: grid; grid-template-columns: 1fr 220px; gap: 40px; align-items: start; } /* text | drone diagram */
-
-.pbadge { display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 18px; }
-.pb-blue  { background: var(--accent-dim); color: var(--accent); border: 1px solid rgba(0,212,255,.25); }
-.pb-amber { background: var(--amber-dim);  color: var(--amber);  border: 1px solid rgba(255,183,77,.25); }
-.pb-green { background: var(--green-dim);  color: var(--green);  border: 1px solid rgba(0,230,118,.25); }
-
-.ptitle { font-size: 21px; font-weight: 700; color: #fff; margin-bottom: 6px; line-height: 1.3; }
-.psub   { font-family: var(--mono); font-size: 11.5px; color: var(--muted); margin-bottom: 26px; }
-
-.metrics4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-bottom: 26px; } /* 4 big numbers */
-.metric { background: rgba(0,212,255,.04); border: 1px solid rgba(0,212,255,.1); border-radius: 10px; padding: 16px 14px; transition: border-color .2s, background .2s; }
-.feat-card:hover .metric { border-color: rgba(0,212,255,.18); background: rgba(0,212,255,.06); } /* brightens on card hover */
-.m-num   { font-family: var(--mono); font-size: 26px; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 7px; }
-.m-label { font-size: 11px; color: var(--muted); line-height: 1.45; }
-
-.metrics3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-bottom: 22px; } /* 3 numbers for smaller cards */
-.mc   { background: rgba(255,255,255,.03); border: 1px solid var(--border); border-radius: 9px; padding: 14px 12px; }
-.mc-n { font-family: var(--mono); font-size: 21px; font-weight: 700; line-height: 1; margin-bottom: 5px; }
-.mc-l { font-size: 10px; color: var(--muted); line-height: 1.4; }
-.mc-n.acc { color: var(--accent); }
-.mc-n.amb { color: var(--amber); }
-.mc-n.grn { color: var(--green); }
-
-.pdesc         { font-size: 14px; color: var(--muted); line-height: 1.75; margin-bottom: 24px; max-width: 640px; }
-.pdesc strong  { color: var(--text); }
-.tags          { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 24px; }
-.pactions      { display: flex; gap: 10px; align-items: center; }
-
-.proj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }  /* 2-column card layout */
-.proj-card {
-  background: var(--card); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 30px;
-  position: relative; overflow: hidden;
-  transition: border-color .28s, transform .28s, box-shadow .28s;
-}
-.proj-card::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; opacity: 0; transition: opacity .28s; }  /* colour bar hidden until hover */
-.proj-card.ca::after { background: linear-gradient(90deg, var(--amber), transparent); }
-.proj-card.cg::after { background: linear-gradient(90deg, var(--green), transparent); }
-.proj-card:hover       { transform: translateY(-5px); box-shadow: 0 18px 44px rgba(0,0,0,.32); }
-.proj-card:hover::after { opacity: 1; }
-.proj-card.ca:hover    { border-color: rgba(255,183,77,.45); }
-.proj-card.cg:hover    { border-color: rgba(0,230,118,.45); }
-
-.drone-viz     { width: 220px; height: 220px; flex-shrink: 0; }  /* UAV formation SVG container */
-.drone-viz svg { width: 100%; height: 100%; }
-
-/* --- About --- */
-#about { background: var(--bg); }
-.about-grid { display: grid; grid-template-columns: 1fr 280px; gap: 72px; align-items: center; }
-.atext p       { color: #8fa0bc; font-size: 16.5px; line-height: 1.82; margin-bottom: 20px; }
-.atext p:last-child { margin-bottom: 0; }
-.atext strong  { color: var(--text); font-weight: 600; }
-.atext .hl     { color: var(--accent); font-weight: 600; }
-.astats        { display: flex; flex-direction: column; gap: 14px; }
-.astat         { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 18px 22px; transition: border-color .22s; }
-.astat:hover   { border-color: rgba(0,212,255,.4); }
-.astat-n       { font-family: var(--mono); font-size: 26px; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 4px; }
-.astat-l       { font-size: 12.5px; color: var(--muted); }
-
-/* --- Skills --- */
-#skills      { background: linear-gradient(to bottom, var(--bg), var(--bg2)); }
-.skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 20px; }  /* auto-fills columns */
-.sgroup      { background: var(--card); border: 1px solid var(--border); border-radius: var(--r); padding: 22px; transition: border-color .22s; }
-.sgroup:hover { border-color: var(--border2); }
-.sgroup-title { font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; display: flex; align-items: center; gap: 7px; }
-.sgroup-title i { font-size: 13px; }
-.chips       { display: flex; flex-wrap: wrap; gap: 7px; }
-
-/* --- Experience timeline --- */
-#experience { background: var(--bg2); }
-.timeline { position: relative; padding-left: 34px; }
-.timeline::before {
-  content: ''; position: absolute; left: 0; top: 8px; bottom: 8px; width: 1px;
-  background: linear-gradient(to bottom, var(--accent), var(--border), transparent); /* fading vertical line */
-}
-.titem             { position: relative; margin-bottom: 46px; }
-.titem:last-child  { margin-bottom: 0; }
-.tdot              { position: absolute; left: -41px; top: 5px; width: 15px; height: 15px; border-radius: 50%; background: var(--bg2); border: 2px solid var(--accent); transition: background .22s; }
-.tdot.edu          { border-color: var(--green); }                 /* education entries use green */
-.titem:hover .tdot     { background: var(--accent); }             /* fills on hover */
-.titem:hover .tdot.edu { background: var(--green); }
-.tmeta  { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 8px; }
-.tco    { font-size: 16.5px; font-weight: 700; color: #fff; }
-.tsep   { color: var(--dim); }
-.trole  { font-size: 13.5px; color: var(--accent); font-weight: 500; }
-.trole.edu { color: var(--green); }
-.tdate  { font-family: var(--mono); font-size: 11.5px; color: var(--muted); margin-left: auto; }
-.tlist  { list-style: none; display: flex; flex-direction: column; gap: 7px; }
-.tlist li { font-size: 13.5px; color: var(--muted); padding-left: 16px; position: relative; line-height: 1.65; }
-.tlist li::before { content: '▸'; position: absolute; left: 0; color: var(--accent); }
-.tlist li strong  { color: var(--text); }
-
-/* --- Contact --- */
-#contact { background: var(--bg); text-align: center; }
-.open-badge  { display: inline-block; font-family: var(--mono); font-size: 12.5px; color: var(--green); background: var(--green-dim); border: 1px solid rgba(0,230,118,.22); border-radius: 20px; padding: 7px 20px; margin-bottom: 30px; }
-.contact-h   { font-size: clamp(26px, 5vw, 44px); font-weight: 800; color: #fff; letter-spacing: -.8px; line-height: 1.15; margin-bottom: 16px; }
-.contact-sub { color: var(--muted); font-size: 15.5px; max-width: 420px; margin: 0 auto 44px; }
-.clinks { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
-.clink  {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 14px 28px; background: var(--card); border: 1px solid var(--border);
-  border-radius: var(--r); color: var(--text); text-decoration: none; font-size: 14.5px; font-weight: 500; transition: all .24s;
-}
-.clink i      { font-size: 17px; }
-.clink:hover  { border-color: var(--accent); color: var(--accent); transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,212,255,.1); }
-
-/* --- Footer --- */
-footer   { background: var(--bg); border-top: 1px solid var(--border); padding: 22px 0; text-align: center; }
-.foot-t  { font-family: var(--mono); font-size: 11.5px; color: var(--dim); }
-.foot-t span { color: var(--accent); }
-
-/* --- Responsive breakpoints --- */
-@media (max-width: 960px) {
-  .feat-inner  { grid-template-columns: 1fr; }     /* stack text + diagram vertically */
-  .drone-viz   { display: none; }                   /* hide diagram on tablet */
-  .metrics4    { grid-template-columns: repeat(2,1fr); }
-  .proj-grid   { grid-template-columns: 1fr; }
-  .about-grid  { grid-template-columns: 1fr; gap: 48px; }
-  .astats      { flex-direction: row; flex-wrap: wrap; }
-  .astat       { flex: 1; min-width: 130px; }
-}
-@media (max-width: 640px) {
-  .section    { padding: 68px 0; }
-  .nav-links  { display: none; }                    /* replaced by hamburger menu */
-  .hamburger  { display: flex; }
-  .hero-stats { gap: 24px; }
-  .metrics4   { grid-template-columns: 1fr 1fr; }
-  .metrics3   { grid-template-columns: 1fr 1fr; }
-  .clinks     { flex-direction: column; align-items: center; }
-  .hero-ctas  { gap: 8px; }
-}
-@media (max-width: 380px) {
-  .metrics4 { grid-template-columns: 1fr 1fr; }
-}
-  </style>
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
@@ -416,17 +31,14 @@ footer   { background: var(--bg); border-top: 1px solid var(--border); padding: 
 </nav>
 
 <div class="mob-menu" id="mobmenu">
-  <a href="#projects"   onclick="closeMob()">Projects</a>
-  <a href="#about"      onclick="closeMob()">About</a>
-  <a href="#skills"     onclick="closeMob()">Skills</a>
+  <a href="#projects" onclick="closeMob()">Projects</a>
+  <a href="#about" onclick="closeMob()">About</a>
+  <a href="#skills" onclick="closeMob()">Skills</a>
   <a href="#experience" onclick="closeMob()">Experience</a>
-  <a href="#contact"    onclick="closeMob()">Contact</a>
+  <a href="#contact" onclick="closeMob()">Contact</a>
 </div>
 
 <section id="hero">
-  <canvas id="hero-canvas"></canvas>
-  <div class="grid-overlay"></div>
-  <div class="hero-vignette"></div>
   <div class="container">
     <div class="hero-content">
       <div class="live-badge">
@@ -438,23 +50,20 @@ footer   { background: var(--bg); border-top: 1px solid var(--border); padding: 
         Backend Engineer<span class="sep">·</span>UAV Systems Researcher<span class="sep">·</span>Builder
       </p>
       <p class="hero-tagline">
-        I build systems that <strong>perform under pressure</strong> — production APIs serving real users,
+        I build systems that <strong>perform under pressure</strong>, production APIs serving real users,
         distributed telemetry pipelines across microservices, and
-        <strong>fault-tolerant UAV swarms</strong> operating under GPS drift and signal degradation.
+        <strong>fault tolerant UAV swarms</strong> operating under GPS drift and signal degradation.
       </p>
       <div class="hero-ctas">
         <a href="#projects" class="btn btn-primary"><i class="fas fa-layer-group"></i> View Projects</a>
-        <!-- UPDATE: replace # with your resume URL -->
         <a href="#" class="btn btn-ghost"><i class="fas fa-file-code"></i> Resume</a>
-        <!-- UPDATE: replace with your GitHub URL -->
-        <a href="https://github.com/" target="_blank" class="btn btn-icon" title="GitHub"><i class="fab fa-github"></i></a>
-        <!-- UPDATE: replace with your LinkedIn URL -->
-        <a href="https://linkedin.com/in/" target="_blank" class="btn btn-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/Nitin3560" target="_blank" rel="noopener noreferrer" class="btn btn-icon" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/nitin-singh-rathore" target="_blank" rel="noopener noreferrer" class="btn btn-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
       </div>
       <div class="hero-stats">
         <div class="hstat"><span class="hstat-n">2+</span><span class="hstat-l">Years Industry Exp.</span></div>
-        <div class="hstat"><span class="hstat-n">289%</span><span class="hstat-l">UAV Task Completion ↑</span></div>
-        <div class="hstat"><span class="hstat-n">53.8%</span><span class="hstat-l">Faster Fault Recovery</span></div>
+        <div class="hstat"><span class="hstat-n">MS CS</span><span class="hstat-l">UT Arlington · Dec 2026</span></div>
+        <div class="hstat"><span class="hstat-n">Thesis</span><span class="hstat-l">UAV fault tolerance work in review</span></div>
         <div class="hstat"><span class="hstat-n">100+</span><span class="hstat-l">Students Mentored</span></div>
       </div>
     </div>
@@ -467,40 +76,21 @@ footer   { background: var(--bg); border-top: 1px solid var(--border); padding: 
     <div class="sec-header fu">
       <span class="overline">What I've Built</span>
       <h2 class="sec-title">Projects & Research</h2>
-      <p class="sec-sub">Systems designed to solve real problems — from production backends to active UAV swarm simulation research.</p>
+      <p class="sec-sub">Systems designed to solve real problems, from production backends to active UAV swarm simulation research.</p>
     </div>
 
-    <!-- Featured: UAV Swarm -->
     <div class="feat-card fu">
       <div class="feat-inner">
         <div>
           <span class="pbadge pb-blue"><i class="fas fa-satellite-dish"></i>&nbsp; Active Research</span>
           <h3 class="ptitle">UAV Swarm Coordination Simulator</h3>
-          <p class="psub">Fault-Tolerant Multi-Agent Control Architecture · Python · PyBullet · CTDE MAPPO</p>
-          <div class="metrics4">
-            <div class="metric">
-              <div class="m-num" data-count="289.6" data-suffix="%">0%</div>
-              <div class="m-label">Higher task-completion rate under fault conditions</div>
-            </div>
-            <div class="metric">
-              <div class="m-num" data-count="53.8" data-suffix="%">0%</div>
-              <div class="m-label">Faster fault recovery vs. PID baseline (5.3s → 11.4s)</div>
-            </div>
-            <div class="metric">
-              <div class="m-num" data-count="63.4" data-suffix="%">0%</div>
-              <div class="m-label">Communication overhead reduction at 30-drone scale</div>
-            </div>
-            <div class="metric">
-              <div class="m-num" data-count="10" data-suffix=" seeds">0</div>
-              <div class="m-label">100% stable runs across independent random seeds</div>
-            </div>
-          </div>
+          <p class="psub">Fault Tolerant Multi Agent Control Architecture · Python · PyBullet · CTDE MAPPO</p>
           <p class="pdesc">
-            Hierarchical fault-tolerant architecture for a 4-drone swarm — <strong>48 Hz cascaded PID inner loop</strong>
-            paired with a <strong>5 Hz agentic supervisor</strong>. CTDE MAPPO multi-agent RL for 6-UAV task allocation yields
-            <strong>15% error reduction under comm faults</strong> and <strong>16.8% under sensor-corruption</strong>.
-            Localized coordination scales <strong>linearly O(N)</strong> vs. O(N²) for centralized baselines —
-            delivering <strong>28.5% lower tracking error</strong> across GPS drift and degraded-signal scenarios.
+            Thesis driven simulation platform for resilient multi UAV coordination under GPS drift, communication degradation,
+            and sensor corruption. The system combines a <strong>cascaded control loop</strong> with a
+            <strong>supervisory multi agent layer</strong> to study how autonomous teams recover gracefully when the environment stops cooperating.
+            The broader research thread also connects swarm control with low altitude wireless network behavior, communication aware coordination,
+            and edge supervision. Specific quantitative results are intentionally omitted here while the manuscript is under review.
           </p>
           <div class="tags">
             <span class="tag">Python</span><span class="tag">PyBullet</span><span class="tag">CTDE MAPPO</span>
@@ -508,44 +98,40 @@ footer   { background: var(--bg); border-top: 1px solid var(--border); padding: 
             <span class="tag">Cascaded PID</span><span class="tag">Multi-Seed Eval</span><span class="tag">Simulation</span>
           </div>
           <div class="pactions">
-            <!-- UPDATE: replace # with your GitHub repo URL -->
-            <a href="#" class="btn btn-primary" style="font-size:13px;padding:9px 19px;"><i class="fab fa-github"></i> GitHub</a>
-            <a href="#" class="btn btn-ghost"   style="font-size:13px;padding:9px 19px;"><i class="fas fa-file-alt"></i> Case Study</a>
+            <a href="uav-case-study.html" class="btn btn-ghost" style="font-size:13px;padding:9px 19px;"><i class="fas fa-file-alt"></i> Case Study</a>
           </div>
         </div>
 
-        <!-- Animated drone formation diagram -->
         <div class="drone-viz">
           <svg viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <line x1="0"   y1="110" x2="220" y2="110" stroke="rgba(0,212,255,.06)" stroke-width="1"/>
-            <line x1="110" y1="0"   x2="110" y2="220" stroke="rgba(0,212,255,.06)" stroke-width="1"/>
-            <line x1="0"   y1="55"  x2="220" y2="55"  stroke="rgba(0,212,255,.04)" stroke-width="1" stroke-dasharray="4 5"/>
-            <line x1="0"   y1="165" x2="220" y2="165" stroke="rgba(0,212,255,.04)" stroke-width="1" stroke-dasharray="4 5"/>
-            <line x1="55"  y1="0"   x2="55"  y2="220" stroke="rgba(0,212,255,.04)" stroke-width="1" stroke-dasharray="4 5"/>
-            <line x1="165" y1="0"   x2="165" y2="220" stroke="rgba(0,212,255,.04)" stroke-width="1" stroke-dasharray="4 5"/>
-            <line x1="110" y1="42"  x2="178" y2="110" stroke="rgba(0,212,255,.22)" stroke-width="1.2" stroke-dasharray="6 4"/>
-            <line x1="178" y1="110" x2="110" y2="178" stroke="rgba(0,212,255,.22)" stroke-width="1.2" stroke-dasharray="6 4"/>
-            <line x1="110" y1="178" x2="42"  y2="110" stroke="rgba(0,212,255,.22)" stroke-width="1.2" stroke-dasharray="6 4"/>
-            <line x1="42"  y1="110" x2="110" y2="42"  stroke="rgba(0,212,255,.22)" stroke-width="1.2" stroke-dasharray="6 4"/>
-            <line x1="110" y1="42"  x2="110" y2="178" stroke="rgba(0,212,255,.09)" stroke-width="1" stroke-dasharray="3 6"/>
-            <line x1="42"  y1="110" x2="178" y2="110" stroke="rgba(0,212,255,.09)" stroke-width="1" stroke-dasharray="3 6"/>
-            <circle cx="110" cy="110" r="15" fill="rgba(0,212,255,.07)" stroke="rgba(0,212,255,.45)" stroke-width="1.5"/>
-            <circle cx="110" cy="110" r="5"  fill="#00d4ff"/>
-            <text x="110" y="107" font-family="JetBrains Mono,monospace" font-size="7.5" fill="rgba(0,212,255,.9)" text-anchor="middle">CTRL</text>
-            <circle cx="110" cy="110" r="22" fill="none" stroke="rgba(0,212,255,.28)" stroke-width="1">
-              <animate attributeName="r"       values="22;65;22"  dur="3.2s" repeatCount="indefinite"/>
+            <line x1="0" y1="110" x2="220" y2="110" stroke="rgba(155,109,255,.06)" stroke-width="1"/>
+            <line x1="110" y1="0" x2="110" y2="220" stroke="rgba(155,109,255,.06)" stroke-width="1"/>
+            <line x1="0" y1="55" x2="220" y2="55" stroke="rgba(155,109,255,.04)" stroke-width="1" stroke-dasharray="4 5"/>
+            <line x1="0" y1="165" x2="220" y2="165" stroke="rgba(155,109,255,.04)" stroke-width="1" stroke-dasharray="4 5"/>
+            <line x1="55" y1="0" x2="55" y2="220" stroke="rgba(155,109,255,.04)" stroke-width="1" stroke-dasharray="4 5"/>
+            <line x1="165" y1="0" x2="165" y2="220" stroke="rgba(155,109,255,.04)" stroke-width="1" stroke-dasharray="4 5"/>
+            <line x1="110" y1="42" x2="178" y2="110" stroke="rgba(155,109,255,.22)" stroke-width="1.2" stroke-dasharray="6 4"/>
+            <line x1="178" y1="110" x2="110" y2="178" stroke="rgba(155,109,255,.22)" stroke-width="1.2" stroke-dasharray="6 4"/>
+            <line x1="110" y1="178" x2="42" y2="110" stroke="rgba(155,109,255,.22)" stroke-width="1.2" stroke-dasharray="6 4"/>
+            <line x1="42" y1="110" x2="110" y2="42" stroke="rgba(155,109,255,.22)" stroke-width="1.2" stroke-dasharray="6 4"/>
+            <line x1="110" y1="42" x2="110" y2="178" stroke="rgba(155,109,255,.09)" stroke-width="1" stroke-dasharray="3 6"/>
+            <line x1="42" y1="110" x2="178" y2="110" stroke="rgba(155,109,255,.09)" stroke-width="1" stroke-dasharray="3 6"/>
+            <circle cx="110" cy="110" r="15" fill="rgba(155,109,255,.07)" stroke="rgba(155,109,255,.45)" stroke-width="1.5"/>
+            <circle cx="110" cy="110" r="5" fill="#9b6dff"/>
+            <text x="110" y="107" font-family="IBM Plex Mono,monospace" font-size="7.5" fill="rgba(155,109,255,.9)" text-anchor="middle">CTRL</text>
+            <circle cx="110" cy="110" r="22" fill="none" stroke="rgba(155,109,255,.28)" stroke-width="1">
+              <animate attributeName="r" values="22;65;22" dur="3.2s" repeatCount="indefinite"/>
               <animate attributeName="opacity" values="0.4;0;0.4" dur="3.2s" repeatCount="indefinite"/>
             </circle>
-            <g><circle cx="110" cy="42" r="13" fill="rgba(0,212,255,.07)" stroke="#00d4ff" stroke-width="1.5"><animate attributeName="r" values="13;15;13" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;.65;1" dur="3s" repeatCount="indefinite"/></circle><circle cx="110" cy="42" r="4" fill="#00d4ff"/><line x1="103" y1="35" x2="117" y2="49" stroke="#00d4ff" stroke-width="1" opacity=".5"/><line x1="117" y1="35" x2="103" y2="49" stroke="#00d4ff" stroke-width="1" opacity=".5"/><text x="110" y="19" font-family="JetBrains Mono,monospace" font-size="8" fill="rgba(0,212,255,.7)" text-anchor="middle">D1</text></g>
-            <g><circle cx="178" cy="110" r="13" fill="rgba(0,212,255,.07)" stroke="#00d4ff" stroke-width="1.5"><animate attributeName="r" values="13;15;13" dur="3.6s" begin=".6s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;.65;1" dur="3.6s" begin=".6s" repeatCount="indefinite"/></circle><circle cx="178" cy="110" r="4" fill="#00d4ff"/><line x1="171" y1="103" x2="185" y2="117" stroke="#00d4ff" stroke-width="1" opacity=".5"/><line x1="185" y1="103" x2="171" y2="117" stroke="#00d4ff" stroke-width="1" opacity=".5"/><text x="201" y="114" font-family="JetBrains Mono,monospace" font-size="8" fill="rgba(0,212,255,.7)" text-anchor="middle">D2</text></g>
-            <g><circle cx="110" cy="178" r="13" fill="rgba(0,212,255,.07)" stroke="#00d4ff" stroke-width="1.5"><animate attributeName="r" values="13;15;13" dur="2.9s" begin="1.1s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;.65;1" dur="2.9s" begin="1.1s" repeatCount="indefinite"/></circle><circle cx="110" cy="178" r="4" fill="#00d4ff"/><line x1="103" y1="171" x2="117" y2="185" stroke="#00d4ff" stroke-width="1" opacity=".5"/><line x1="117" y1="171" x2="103" y2="185" stroke="#00d4ff" stroke-width="1" opacity=".5"/><text x="110" y="202" font-family="JetBrains Mono,monospace" font-size="8" fill="rgba(0,212,255,.7)" text-anchor="middle">D3</text></g>
-            <g><circle cx="42" cy="110" r="13" fill="rgba(0,212,255,.07)" stroke="#00d4ff" stroke-width="1.5"><animate attributeName="r" values="13;15;13" dur="4.1s" begin="1.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;.65;1" dur="4.1s" begin="1.6s" repeatCount="indefinite"/></circle><circle cx="42" cy="110" r="4" fill="#00d4ff"/><line x1="35" y1="103" x2="49" y2="117" stroke="#00d4ff" stroke-width="1" opacity=".5"/><line x1="49" y1="103" x2="35" y2="117" stroke="#00d4ff" stroke-width="1" opacity=".5"/><text x="19" y="114" font-family="JetBrains Mono,monospace" font-size="8" fill="rgba(0,212,255,.7)" text-anchor="middle">D4</text></g>
+            <g><circle cx="110" cy="42" r="13" fill="rgba(155,109,255,.07)" stroke="#9b6dff" stroke-width="1.5"><animate attributeName="r" values="13;15;13" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;.65;1" dur="3s" repeatCount="indefinite"/></circle><circle cx="110" cy="42" r="4" fill="#9b6dff"/><line x1="103" y1="35" x2="117" y2="49" stroke="#9b6dff" stroke-width="1" opacity=".5"/><line x1="117" y1="35" x2="103" y2="49" stroke="#9b6dff" stroke-width="1" opacity=".5"/><text x="110" y="19" font-family="IBM Plex Mono,monospace" font-size="8" fill="rgba(155,109,255,.7)" text-anchor="middle">D1</text></g>
+            <g><circle cx="178" cy="110" r="13" fill="rgba(155,109,255,.07)" stroke="#9b6dff" stroke-width="1.5"><animate attributeName="r" values="13;15;13" dur="3.6s" begin=".6s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;.65;1" dur="3.6s" begin=".6s" repeatCount="indefinite"/></circle><circle cx="178" cy="110" r="4" fill="#9b6dff"/><line x1="171" y1="103" x2="185" y2="117" stroke="#9b6dff" stroke-width="1" opacity=".5"/><line x1="185" y1="103" x2="171" y2="117" stroke="#9b6dff" stroke-width="1" opacity=".5"/><text x="201" y="114" font-family="IBM Plex Mono,monospace" font-size="8" fill="rgba(155,109,255,.7)" text-anchor="middle">D2</text></g>
+            <g><circle cx="110" cy="178" r="13" fill="rgba(155,109,255,.07)" stroke="#9b6dff" stroke-width="1.5"><animate attributeName="r" values="13;15;13" dur="2.9s" begin="1.1s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;.65;1" dur="2.9s" begin="1.1s" repeatCount="indefinite"/></circle><circle cx="110" cy="178" r="4" fill="#9b6dff"/><line x1="103" y1="171" x2="117" y2="185" stroke="#9b6dff" stroke-width="1" opacity=".5"/><line x1="117" y1="171" x2="103" y2="185" stroke="#9b6dff" stroke-width="1" opacity=".5"/><text x="110" y="202" font-family="IBM Plex Mono,monospace" font-size="8" fill="rgba(155,109,255,.7)" text-anchor="middle">D3</text></g>
+            <g><circle cx="42" cy="110" r="13" fill="rgba(155,109,255,.07)" stroke="#9b6dff" stroke-width="1.5"><animate attributeName="r" values="13;15;13" dur="4.1s" begin="1.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;.65;1" dur="4.1s" begin="1.6s" repeatCount="indefinite"/></circle><circle cx="42" cy="110" r="4" fill="#9b6dff"/><line x1="35" y1="103" x2="49" y2="117" stroke="#9b6dff" stroke-width="1" opacity=".5"/><line x1="49" y1="103" x2="35" y2="117" stroke="#9b6dff" stroke-width="1" opacity=".5"/><text x="19" y="114" font-family="IBM Plex Mono,monospace" font-size="8" fill="rgba(155,109,255,.7)" text-anchor="middle">D4</text></g>
           </svg>
         </div>
       </div>
     </div>
 
-    <!-- Traceback AI + JobPrep AI -->
     <div class="proj-grid">
       <div class="proj-card ca fu d1">
         <span class="pbadge pb-amber"><i class="fas fa-trophy"></i>&nbsp; Nexus Hackathon</span>
@@ -559,13 +145,12 @@ footer   { background: var(--bg); border-top: 1px solid var(--border); padding: 
         <p class="pdesc">FastAPI backend ingesting logs, metrics, and deployment events across <strong>10+ microservices</strong>. Z-score anomaly detection + graph traversal for root-cause ranking. Normalizes <strong>5+ telemetry formats</strong>.</p>
         <div class="tags"><span class="tag">FastAPI</span><span class="tag">OpenTelemetry</span><span class="tag">Python</span><span class="tag">Z-Score</span><span class="tag">Graph Traversal</span><span class="tag">Microservices</span></div>
         <div class="pactions">
-          <!-- UPDATE: replace # with your GitHub repo URL -->
-          <a href="#" class="btn btn-amber" style="font-size:12.5px;padding:8px 17px;"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://github.com/Nitin3560/traceback-ai" target="_blank" rel="noopener noreferrer" class="btn btn-amber" style="font-size:12.5px;padding:8px 17px;"><i class="fab fa-github"></i> GitHub</a>
         </div>
       </div>
 
       <div class="proj-card cg fu d2">
-        <span class="pbadge pb-green"><i class="fas fa-rocket"></i>&nbsp; Shipped · 12–15 Users</span>
+        <span class="pbadge pb-green"><i class="fas fa-rocket"></i>&nbsp; Shipped · 12 to 15 Users</span>
         <h3 class="ptitle">JobPrep AI</h3>
         <p class="psub" style="font-family:var(--mono);font-size:11px;color:var(--muted);margin-bottom:20px;">Conversational RAG Document Assistant · Full Stack</p>
         <div class="metrics3">
@@ -576,8 +161,7 @@ footer   { background: var(--bg); border-top: 1px solid var(--border); padding: 
         <p class="pdesc">React/TypeScript frontend + FastAPI backend on <strong>GCP Cloud Run</strong>. LlamaIndex vector search over chunked PDF/TXT docs. Ollama for fully <strong>offline local LLM inference</strong>.</p>
         <div class="tags"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">FastAPI</span><span class="tag">GCP</span><span class="tag">LlamaIndex</span><span class="tag">Ollama</span><span class="tag">Vector Search</span></div>
         <div class="pactions">
-          <!-- UPDATE: replace # with your GitHub repo URL -->
-          <a href="#" class="btn btn-green" style="font-size:12.5px;padding:8px 17px;"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://github.com/Nitin3560/JobPrep-AI-Conversational-RAG-Document-Assistant" target="_blank" rel="noopener noreferrer" class="btn btn-green" style="font-size:12.5px;padding:8px 17px;"><i class="fab fa-github"></i> GitHub</a>
         </div>
       </div>
     </div>
@@ -592,10 +176,10 @@ footer   { background: var(--bg); border-top: 1px solid var(--border); padding: 
     </div>
     <div class="about-grid">
       <div class="atext fu">
-        <p>I'm an <span class="hl">MS Computer Science student at UT Arlington</span> (graduating Dec 2026) with 2+ years of professional backend engineering under my belt — and I'm most interested in systems that have to <strong>keep working when things go wrong</strong>.</p>
-        <p>My research focuses on <strong>UAV swarm coordination and fault-tolerant control systems</strong> — building multi-agent architectures that maintain mission integrity under GPS drift, signal degradation, and sensor corruption. That work lives at the intersection of distributed systems, control theory, and reinforcement learning.</p>
-        <p>On the production side, I've shipped backend services in Java, Python, and Go — REST APIs, telemetry pipelines, RAG systems, cloud infrastructure. I move fast with AI coding tools, care about the engineering details that separate demos from deployable systems, and I ship things that real people use.</p>
-        <p>I'm drawn to <strong>hard tech</strong> — defense, aerospace, autonomous systems, distributed AI. If the problem involves real-world constraints, meaningful failure modes, and systems that can't just "restart and retry," that's where I want to be.</p>
+        <p>I'm an <span class="hl">MS Computer Science student at UT Arlington</span> (graduating Dec 2026) with 2+ years of professional backend engineering under my belt, and I'm most interested in systems that have to <strong>keep working when things go wrong</strong>.</p>
+        <p>My research focuses on <strong>UAV swarm coordination and fault tolerant control systems</strong>, building multi agent architectures that maintain mission integrity under GPS drift, signal degradation, and sensor corruption. That work lives at the intersection of distributed systems, control theory, and reinforcement learning.</p>
+        <p>On the production side, I've shipped backend services in Java, Python, and Go, REST APIs, telemetry pipelines, RAG systems, and cloud infrastructure. I move fast with AI coding tools, care about the engineering details that separate demos from deployable systems, and I ship things that real people use.</p>
+        <p>I'm drawn to <strong>hard tech</strong>, defense, aerospace, autonomous systems, and distributed AI. If the problem involves real world constraints, meaningful failure modes, and systems that can't just "restart and retry," that's where I want to be.</p>
       </div>
       <div class="astats fu d2">
         <div class="astat"><div class="astat-n">MS CS</div><div class="astat-l">UT Arlington · Dec 2026</div></div>
@@ -612,16 +196,16 @@ footer   { background: var(--bg); border-top: 1px solid var(--border); padding: 
     <div class="sec-header fu">
       <span class="overline">Technical Stack</span>
       <h2 class="sec-title">Skills &amp; Technologies</h2>
-      <p class="sec-sub">Tools I've shipped production code with — grouped by domain.</p>
+      <p class="sec-sub">Tools I've shipped production code with, grouped by domain.</p>
     </div>
     <div class="skills-grid">
       <div class="sgroup fu"><div class="sgroup-title"><i class="fas fa-code"></i> Languages</div><div class="chips"><span class="chip hi">Golang</span><span class="chip hi">Python</span><span class="chip">JavaScript</span><span class="chip">TypeScript</span><span class="chip">Java</span><span class="chip">C++</span><span class="chip">C</span></div></div>
-      <div class="sgroup fu d1"><div class="sgroup-title"><i class="fas fa-server"></i> Backend</div><div class="chips"><span class="chip hi">FastAPI</span><span class="chip hi">Microservices</span><span class="chip hi">Event-Driven Arch.</span><span class="chip">Flask</span><span class="chip">REST API</span><span class="chip">SOAP API</span><span class="chip">Node.js</span></div></div>
+      <div class="sgroup fu d1"><div class="sgroup-title"><i class="fas fa-server"></i> Backend</div><div class="chips"><span class="chip hi">FastAPI</span><span class="chip hi">Microservices</span><span class="chip hi">Event Driven Arch.</span><span class="chip">Flask</span><span class="chip">REST API</span><span class="chip">SOAP API</span><span class="chip">Node.js</span></div></div>
       <div class="sgroup fu d2"><div class="sgroup-title"><i class="fas fa-window-restore"></i> Frontend</div><div class="chips"><span class="chip">React</span><span class="chip">Next.js</span><span class="chip">TypeScript</span><span class="chip">Real-Time Dashboards</span><span class="chip">Data Visualization</span></div></div>
       <div class="sgroup fu d3"><div class="sgroup-title"><i class="fas fa-cloud"></i> Cloud &amp; DevOps</div><div class="chips"><span class="chip hi">AWS EC2 / ECS / S3</span><span class="chip hi">GCP (Compute, Cloud Run)</span><span class="chip">Docker</span><span class="chip">CI/CD</span><span class="chip">CloudWatch</span><span class="chip">CodePipeline</span><span class="chip">IAM</span></div></div>
       <div class="sgroup fu"><div class="sgroup-title"><i class="fas fa-database"></i> Databases</div><div class="chips"><span class="chip">PostgreSQL</span><span class="chip">MySQL</span><span class="chip">AWS RDS</span><span class="chip hi">Vector Search</span><span class="chip">SQLite</span><span class="chip">SOQL / SQL</span><span class="chip">JSON / JSONL</span></div></div>
-      <div class="sgroup fu d1"><div class="sgroup-title"><i class="fas fa-microchip"></i> Simulation &amp; Systems</div><div class="chips"><span class="chip hi">Fault Injection Testing</span><span class="chip hi">PyBullet</span><span class="chip hi">MAPPO / MARL</span><span class="chip">OpenTelemetry</span><span class="chip">Distributed Systems</span><span class="chip">Multi-Seed Eval</span></div></div>
-      <div class="sgroup fu d2"><div class="sgroup-title"><i class="fas fa-brain"></i> AI / ML</div><div class="chips"><span class="chip hi">LlamaIndex</span><span class="chip hi">RAG Pipelines</span><span class="chip">Ollama</span><span class="chip">Prompt Engineering</span><span class="chip">Z-Score Anomaly Detection</span><span class="chip">Incremental Indexing</span><span class="chip">PDF / Doc Parsing</span></div></div>
+      <div class="sgroup fu d1"><div class="sgroup-title"><i class="fas fa-microchip"></i> Simulation &amp; Systems</div><div class="chips"><span class="chip hi">Fault Injection Testing</span><span class="chip hi">PyBullet</span><span class="chip hi">MAPPO / MARL</span><span class="chip">OpenTelemetry</span><span class="chip">Distributed Systems</span><span class="chip">Multi Seed Eval</span></div></div>
+      <div class="sgroup fu d2"><div class="sgroup-title"><i class="fas fa-brain"></i> AI / ML</div><div class="chips"><span class="chip hi">LlamaIndex</span><span class="chip hi">RAG Pipelines</span><span class="chip">Ollama</span><span class="chip">Prompt Engineering</span><span class="chip">Z Score Anomaly Detection</span><span class="chip">Incremental Indexing</span><span class="chip">PDF / Doc Parsing</span></div></div>
     </div>
   </div>
 </section>
@@ -632,25 +216,25 @@ footer   { background: var(--bg); border-top: 1px solid var(--border); padding: 
     <div class="timeline fu">
       <div class="titem">
         <div class="tdot"></div>
-        <div class="tmeta"><span class="tco">UT Arlington</span><span class="tsep">—</span><span class="trole">Graduate Teaching Assistant</span><span class="tdate">Aug 2025 – Present</span></div>
+        <div class="tmeta"><span class="tco">UT Arlington</span><span class="tsep">,</span><span class="trole">Graduate Teaching Assistant</span><span class="tdate">Aug 2025 to Present</span></div>
         <ul class="tlist">
-          <li>Supporting <strong>4 master's-level courses</strong> including Machine Learning and Data Science, mentoring <strong>100+ graduate students</strong> through coursework, projects, and technical questions.</li>
+          <li>Supporting <strong>4 masters level courses</strong> including Machine Learning and Data Science, mentoring <strong>100+ graduate students</strong> through coursework, projects, and technical questions.</li>
           <li>Built a <strong>Python automated grading tool</strong> to streamline assignment evaluation and reduce manual overhead at scale.</li>
-          <li>Conducting active research in <strong>UAV swarm coordination, fault-tolerant control architectures, and multi-agent reinforcement learning</strong>.</li>
+          <li>Conducting active research in <strong>UAV swarm coordination, fault tolerant control architectures, and multi agent reinforcement learning</strong>.</li>
         </ul>
       </div>
       <div class="titem">
         <div class="tdot"></div>
-        <div class="tmeta"><span class="tco">WERBOOZ India</span><span class="tsep">—</span><span class="trole">Junior Software Developer</span><span class="tdate">Sept 2023 – Oct 2024</span></div>
+        <div class="tmeta"><span class="tco">WERBOOZ India</span><span class="tsep">,</span><span class="trole">Junior Software Developer</span><span class="tdate">Sept 2023 to Oct 2024</span></div>
         <ul class="tlist">
-          <li>Engineered <strong>6 Java/Apex backend services</strong> achieving <strong>99.8% API uptime</strong>, reducing defects by <strong>30%</strong>, and resolving <strong>12 production incidents</strong> with documented root-cause analysis.</li>
+          <li>Engineered <strong>6 Java/Apex backend services</strong> achieving <strong>99.8% API uptime</strong>, reducing defects by <strong>30%</strong>, and resolving <strong>12 production incidents</strong> with documented root cause analysis.</li>
           <li>Led integration testing and API contract enforcement enabling stable downstream integration across client deployments.</li>
           <li>Drove SOQL query optimization, Apex trigger development, and REST integrations with Salesforce APIs across production environments.</li>
         </ul>
       </div>
       <div class="titem">
         <div class="tdot"></div>
-        <div class="tmeta"><span class="tco">WERBOOZ India</span><span class="tsep">—</span><span class="trole">Software Developer Intern</span><span class="tdate">Feb 2023 – Sept 2023</span></div>
+        <div class="tmeta"><span class="tco">WERBOOZ India</span><span class="tsep">,</span><span class="trole">Software Developer Intern</span><span class="tdate">Feb 2023 to Sept 2023</span></div>
         <ul class="tlist">
           <li>Shipped <strong>4 production features</strong> and eliminated <strong>20+ bugs</strong>, contributing to a <strong>15% efficiency improvement</strong> in core backend workflows.</li>
           <li>Developed backend modules in Java with REST integrations, API validation layers, and full Agile participation.</li>
@@ -658,12 +242,12 @@ footer   { background: var(--bg); border-top: 1px solid var(--border); padding: 
       </div>
       <div class="titem">
         <div class="tdot edu"></div>
-        <div class="tmeta"><span class="tco">UT Arlington</span><span class="tsep">—</span><span class="trole edu">M.S. Computer Science</span><span class="tdate">Jan 2025 – Dec 2026</span></div>
-        <ul class="tlist"><li>Focus: <strong>Distributed Systems, Machine Learning, UAV Control Systems, Multi-Agent Reinforcement Learning</strong></li></ul>
+        <div class="tmeta"><span class="tco">UT Arlington</span><span class="tsep">,</span><span class="trole edu">M.S. Computer Science</span><span class="tdate">Jan 2025 to Dec 2026</span></div>
+        <ul class="tlist"><li>Focus: <strong>Distributed Systems, Machine Learning, UAV Control Systems, Multi Agent Reinforcement Learning</strong></li></ul>
       </div>
       <div class="titem">
         <div class="tdot edu"></div>
-        <div class="tmeta"><span class="tco">Acropolis Institute of Technology and Research</span><span class="tsep">—</span><span class="trole edu">B.E. Computer Science</span><span class="tdate">Aug 2019 – May 2023</span></div>
+        <div class="tmeta"><span class="tco">Acropolis Institute of Technology and Research</span><span class="tsep">,</span><span class="trole edu">B.E. Computer Science</span><span class="tdate">Aug 2019 to May 2023</span></div>
       </div>
     </div>
   </div>
@@ -676,10 +260,8 @@ footer   { background: var(--bg); border-top: 1px solid var(--border); padding: 
     <p class="contact-sub">Working on autonomous systems, distributed infrastructure, or hard problems in defense tech? I want to hear about it.</p>
     <div class="clinks">
       <a href="mailto:nxr3560@mavs.uta.edu" class="clink"><i class="fas fa-envelope"></i> nxr3560@mavs.uta.edu</a>
-      <!-- UPDATE: replace with your GitHub URL -->
-      <a href="https://github.com/" target="_blank" class="clink"><i class="fab fa-github"></i> GitHub</a>
-      <!-- UPDATE: replace with your LinkedIn URL -->
-      <a href="https://linkedin.com/in/" target="_blank" class="clink"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+      <a href="https://github.com/Nitin3560" target="_blank" rel="noopener noreferrer" class="clink"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://www.linkedin.com/in/nitin-singh-rathore" target="_blank" rel="noopener noreferrer" class="clink"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
     </div>
   </div>
 </section>
@@ -690,138 +272,6 @@ footer   { background: var(--bg); border-top: 1px solid var(--border); padding: 
   </div>
 </footer>
 
-<script>
-// main.js — Nitin Singh Rathore portfolio
-// Sections: Canvas · Navbar · Mobile menu · Scroll fade-in · Counters · Active nav
-
-// --- Hero canvas: animated particle network ---
-(function () {
-  const canvas = document.getElementById('hero-canvas');
-  const ctx    = canvas.getContext('2d');
-  let pts = [];
-
-  function resize() {
-    canvas.width  = window.innerWidth;  // fill full viewport
-    canvas.height = window.innerHeight;
-  }
-
-  function spawn() {
-    pts = [];
-    const n = Math.min(Math.floor((canvas.width * canvas.height) / 12000), 80); // ~1 particle per 12k px², max 80
-    for (let i = 0; i < n; i++) {
-      pts.push({
-        x:  Math.random() * canvas.width,
-        y:  Math.random() * canvas.height,
-        vx: (Math.random() - .5) * .28,  // slow random drift
-        vy: (Math.random() - .5) * .28,
-        r:  Math.random() * 1.4 + .4,    // radius 0.4–1.8px
-        a:  Math.random() * .38 + .08,   // base alpha
-        ph: Math.random() * Math.PI * 2  // phase offset so pulses aren't in sync
-      });
-    }
-  }
-
-  function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    pts.forEach((p, i) => {
-      p.x  += p.vx;               // move
-      p.y  += p.vy;
-      p.ph += .016;               // advance pulse phase
-
-      // wrap edges so particles re-enter from the other side
-      if (p.x < 0)             p.x = canvas.width;
-      if (p.x > canvas.width)  p.x = 0;
-      if (p.y < 0)             p.y = canvas.height;
-      if (p.y > canvas.height) p.y = 0;
-
-      const alpha = p.a * (.7 + .3 * Math.sin(p.ph)); // slow breathing pulse
-
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(0,212,255,${alpha})`;
-      ctx.fill();
-
-      // draw faint lines to nearby particles — simulates signal mesh
-      for (let j = i + 1; j < pts.length; j++) {
-        const q  = pts[j];
-        const dx = p.x - q.x, dy = p.y - q.y;
-        const d  = Math.sqrt(dx * dx + dy * dy);
-        if (d < 130) {                               // only connect within 130px
-          ctx.beginPath();
-          ctx.moveTo(p.x, p.y);
-          ctx.lineTo(q.x, q.y);
-          ctx.strokeStyle = `rgba(0,212,255,${(1 - d / 130) * .1})`; // fades with distance
-          ctx.lineWidth = .6;
-          ctx.stroke();
-        }
-      }
-    });
-
-    requestAnimationFrame(draw); // loop
-  }
-
-  resize(); spawn(); draw();
-  window.addEventListener('resize', () => { resize(); spawn(); }); // respawn on resize
-})();
-
-// --- Navbar: frosted-glass background after scrolling ---
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 20); // .scrolled adds backdrop-filter
-}, { passive: true });
-
-// --- Mobile hamburger menu ---
-const hbg     = document.getElementById('hbg');
-const mobmenu = document.getElementById('mobmenu');
-hbg.addEventListener('click', () => mobmenu.classList.toggle('open'));
-function closeMob() { mobmenu.classList.remove('open'); } // called by onclick in HTML links
-
-// --- Scroll fade-in: adds .vis when element enters viewport ---
-const fadeObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
-}, { threshold: 0.08 }); // triggers when 8% of element is visible
-document.querySelectorAll('.fu').forEach(el => fadeObs.observe(el));
-
-// --- Counter animation: counts up from 0 when metric scrolls into view ---
-function animCount(el) {
-  const target = parseFloat(el.dataset.count); // e.g. 289.6
-  const suffix = el.dataset.suffix || '';       // e.g. "%"
-  const dur    = 1600;                          // animation duration ms
-  const start  = performance.now();
-
-  (function step(now) {
-    const t     = Math.min((now - start) / dur, 1);
-    const eased = 1 - Math.pow(1 - t, 3);      // ease-out cubic — fast start, slow finish
-    const val   = eased * target;
-    el.textContent = (target % 1 !== 0 ? val.toFixed(1) : Math.round(val)) + suffix;
-    if (t < 1) requestAnimationFrame(step);
-  })(start);
-}
-
-const counterObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting && e.target.dataset.count !== undefined) {
-      animCount(e.target);
-      counterObs.unobserve(e.target); // only fire once per element
-    }
-  });
-}, { threshold: 0.5 });
-document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
-
-// --- Active nav link: highlights the link matching the current section ---
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-links a');
-const sectionObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      navLinks.forEach(a => {
-        a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id);
-      });
-    }
-  });
-}, { threshold: 0.45 }); // section needs to be ~half in view
-sections.forEach(s => sectionObs.observe(s));
-</script>
+<script src="js/main.js"></script>
 </body>
 </html>
