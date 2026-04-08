@@ -353,6 +353,40 @@ nav.scrolled {
 .tlist li::before { content: '▸'; position: absolute; left: 0; color: var(--accent); }
 .tlist li strong  { color: var(--text); }
 
+@media (min-width: 961px) {
+  .timeline {
+    padding-left: 0;
+  }
+
+  .timeline::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .titem {
+    width: calc(50% - 42px);
+  }
+
+  .titem:nth-child(odd) {
+    margin-right: auto;
+    padding-right: 18px;
+  }
+
+  .titem:nth-child(even) {
+    margin-left: auto;
+    padding-left: 18px;
+  }
+
+  .titem:nth-child(odd) .tdot {
+    left: auto;
+    right: -50px;
+  }
+
+  .titem:nth-child(even) .tdot {
+    left: -50px;
+  }
+}
+
 /* --- Contact --- */
 #contact { background: var(--bg); text-align: center; }
 .open-badge  { display: inline-block; font-family: var(--mono); font-size: 12.5px; color: var(--green); background: var(--green-dim); border: 1px solid rgba(0,230,118,.22); border-radius: 20px; padding: 7px 20px; margin-bottom: 30px; }
@@ -381,6 +415,10 @@ footer   { background: var(--bg); border-top: 1px solid var(--border); padding: 
   .about-grid  { grid-template-columns: 1fr; gap: 48px; }
   .astats      { flex-direction: row; flex-wrap: wrap; }
   .astat       { flex: 1; min-width: 130px; }
+  .timeline    { padding-left: 34px; }
+  .timeline::before { left: 0; transform: none; }
+  .titem       { width: auto; padding-left: 0; padding-right: 0; }
+  .tdot        { left: -41px; right: auto; }
 }
 @media (max-width: 640px) {
   .section    { padding: 68px 0; }
@@ -438,9 +476,10 @@ footer   { background: var(--bg); border-top: 1px solid var(--border); padding: 
         Backend Engineer<span class="sep">·</span>UAV Systems Researcher<span class="sep">·</span>Builder
       </p>
       <p class="hero-tagline">
-        I build systems that <strong>perform under pressure</strong> — production APIs serving real users,
-        distributed telemetry pipelines across microservices, and
-        <strong>fault-tolerant UAV swarms</strong> operating under GPS drift and signal degradation.
+        Two years shipping Java and Python backend services across production Salesforce ecosystems —
+        real SLAs, real incident response, real enterprise clients. Concurrently researching
+        <strong>fault-tolerant UAV swarm coordination</strong> with results validated across
+        10 independent random seeds. I build for environments where failure has consequences.
       </p>
       <div class="hero-ctas">
         <a href="#projects" class="btn btn-primary"><i class="fas fa-layer-group"></i> View Projects</a>
@@ -480,27 +519,30 @@ footer   { background: var(--bg); border-top: 1px solid var(--border); padding: 
           <div class="metrics4">
             <div class="metric">
               <div class="m-num" data-count="289.6" data-suffix="%">0%</div>
-              <div class="m-label">Higher task-completion rate under fault conditions</div>
+              <div class="m-label">Higher task-completion rate under multi-fault conditions vs. baseline</div>
             </div>
             <div class="metric">
               <div class="m-num" data-count="53.8" data-suffix="%">0%</div>
-              <div class="m-label">Faster fault recovery vs. PID baseline (5.3s → 11.4s)</div>
+              <div class="m-label">Faster fault recovery — 5.3s vs. 11.4s for PID baseline</div>
             </div>
             <div class="metric">
               <div class="m-num" data-count="63.4" data-suffix="%">0%</div>
-              <div class="m-label">Communication overhead reduction at 30-drone scale</div>
+              <div class="m-label">Lower communication overhead at 30-drone scale</div>
             </div>
             <div class="metric">
               <div class="m-num" data-count="10" data-suffix=" seeds">0</div>
-              <div class="m-label">100% stable runs across independent random seeds</div>
+              <div class="m-label">Independent random seeds — 100% stable across all configurations</div>
             </div>
           </div>
           <p class="pdesc">
-            Hierarchical fault-tolerant architecture for a 4-drone swarm — <strong>48 Hz cascaded PID inner loop</strong>
-            paired with a <strong>5 Hz agentic supervisor</strong>. CTDE MAPPO multi-agent RL for 6-UAV task allocation yields
-            <strong>15% error reduction under comm faults</strong> and <strong>16.8% under sensor-corruption</strong>.
-            Localized coordination scales <strong>linearly O(N)</strong> vs. O(N²) for centralized baselines —
-            delivering <strong>28.5% lower tracking error</strong> across GPS drift and degraded-signal scenarios.
+            A full physics-based simulation framework for UAV swarm coordination under realistic fault conditions.
+            The architecture uses a <strong>hierarchical control design</strong> — a high-frequency inner loop for stability
+            paired with a lower-frequency agentic supervisor handling fault classification and mission logic.
+            A <strong>CTDE MAPPO</strong> policy handles multi-UAV task allocation under degraded communication and sensor noise,
+            reducing post-fault tracking error by up to <strong>16.8%</strong> vs. uncoordinated baselines.
+            Localized coordination scales <strong>O(N) linearly</strong> vs. O(N²) for centralized approaches —
+            delivering <strong>28.5% lower tracking error</strong> across GPS drift and communication-degraded scenarios.
+            All results validated across <strong>10 independent random seeds</strong> with 100% run stability.
           </p>
           <div class="tags">
             <span class="tag">Python</span><span class="tag">PyBullet</span><span class="tag">CTDE MAPPO</span>
@@ -556,7 +598,7 @@ footer   { background: var(--bg); border-top: 1px solid var(--border); padding: 
           <div class="mc"><div class="mc-n amb" data-count="60" data-suffix="%">0%</div><div class="mc-l">Lower normalization latency</div></div>
           <div class="mc"><div class="mc-n amb" data-count="30" data-suffix="%">0%</div><div class="mc-l">Fewer false-positive signals</div></div>
         </div>
-        <p class="pdesc">FastAPI backend ingesting logs, metrics, and deployment events across <strong>10+ microservices</strong>. Z-score anomaly detection + graph traversal for root-cause ranking. Normalizes <strong>5+ telemetry formats</strong>.</p>
+        <p class="pdesc">FastAPI backend ingesting logs, metrics, and deployment events across <strong>10+ microservices</strong>. Normalized data pipeline standardizes <strong>5+ heterogeneous telemetry formats</strong> (Prometheus, structured JSON, raw log streams). Root-cause engine combines temporal correlation, Z-score anomaly strength, and <strong>dependency graph traversal</strong> to rank multi-factor diagnoses — surfacing the correct fault in the top-3 results <strong>87% of the time</strong>.</p>
         <div class="tags"><span class="tag">FastAPI</span><span class="tag">OpenTelemetry</span><span class="tag">Python</span><span class="tag">Z-Score</span><span class="tag">Graph Traversal</span><span class="tag">Microservices</span></div>
         <div class="pactions">
           <!-- UPDATE: replace # with your GitHub repo URL -->
@@ -573,7 +615,7 @@ footer   { background: var(--bg); border-top: 1px solid var(--border); padding: 
           <div class="mc"><div class="mc-n grn" data-count="45" data-suffix="%">0%</div><div class="mc-l">Faster re-index via incremental embedding</div></div>
           <div class="mc"><div class="mc-n grn">100%</div><div class="mc-l">Offline capable (local LLM)</div></div>
         </div>
-        <p class="pdesc">React/TypeScript frontend + FastAPI backend on <strong>GCP Cloud Run</strong>. LlamaIndex vector search over chunked PDF/TXT docs. Ollama for fully <strong>offline local LLM inference</strong>.</p>
+        <p class="pdesc">React/TypeScript frontend + FastAPI backend deployed on <strong>GCP Cloud Run</strong>, handling real active user sessions. LlamaIndex vector pipeline chunks and indexes PDF/TXT documents for semantic retrieval. Incremental embedding logic skips unchanged chunks on re-index — cutting re-index time by <strong>45%</strong>. Ollama integration enables <strong>fully offline LLM inference</strong>, eliminating cloud API costs for local deployments. Sub-2-second query response on commodity hardware.</p>
         <div class="tags"><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">FastAPI</span><span class="tag">GCP</span><span class="tag">LlamaIndex</span><span class="tag">Ollama</span><span class="tag">Vector Search</span></div>
         <div class="pactions">
           <!-- UPDATE: replace # with your GitHub repo URL -->
@@ -592,10 +634,10 @@ footer   { background: var(--bg); border-top: 1px solid var(--border); padding: 
     </div>
     <div class="about-grid">
       <div class="atext fu">
-        <p>I'm an <span class="hl">MS Computer Science student at UT Arlington</span> (graduating Dec 2026) with 2+ years of professional backend engineering under my belt — and I'm most interested in systems that have to <strong>keep working when things go wrong</strong>.</p>
-        <p>My research focuses on <strong>UAV swarm coordination and fault-tolerant control systems</strong> — building multi-agent architectures that maintain mission integrity under GPS drift, signal degradation, and sensor corruption. That work lives at the intersection of distributed systems, control theory, and reinforcement learning.</p>
-        <p>On the production side, I've shipped backend services in Java, Python, and Go — REST APIs, telemetry pipelines, RAG systems, cloud infrastructure. I move fast with AI coding tools, care about the engineering details that separate demos from deployable systems, and I ship things that real people use.</p>
-        <p>I'm drawn to <strong>hard tech</strong> — defense, aerospace, autonomous systems, distributed AI. If the problem involves real-world constraints, meaningful failure modes, and systems that can't just "restart and retry," that's where I want to be.</p>
+        <p>I'm an <span class="hl">MS Computer Science student at UT Arlington</span> (graduating Dec 2026) with 2+ years of professional backend engineering behind me — not side projects, but production Java and Apex services handling live enterprise workloads across a Salesforce ecosystem. I've resolved production incidents under 2-hour SLA windows, optimized queries cutting latency by 35%, and maintained 99.8% API uptime across 3 client deployments.</p>
+        <p>In parallel, I'm doing graduate research in <strong>UAV swarm coordination and fault-tolerant multi-agent control</strong> — building simulation frameworks and training MARL policies that hold up under GPS drift, sensor corruption, and communication degradation. The kind of work where the system has to keep flying even when things break.</p>
+        <p>I've also shipped two AI products independently: a RAG document assistant with real active users deployed on GCP, and an observability engine for distributed microservice diagnosis built at a hackathon. Both run on infrastructure I provisioned and deployed end-to-end.</p>
+        <p>I do my best work on <strong>hard technical problems with real constraints</strong> — bandwidth-limited links, multi-fault injection, production SLAs. If the system can't afford to just restart and retry, that's exactly the environment I want to be in.</p>
       </div>
       <div class="astats fu d2">
         <div class="astat"><div class="astat-n">MS CS</div><div class="astat-l">UT Arlington · Dec 2026</div></div>
@@ -634,26 +676,29 @@ footer   { background: var(--bg); border-top: 1px solid var(--border); padding: 
         <div class="tdot"></div>
         <div class="tmeta"><span class="tco">UT Arlington</span><span class="tsep">—</span><span class="trole">Graduate Teaching Assistant</span><span class="tdate">Aug 2025 – Present</span></div>
         <ul class="tlist">
-          <li>Supporting <strong>4 master's-level courses</strong> including Machine Learning and Data Science, mentoring <strong>100+ graduate students</strong> through coursework, projects, and technical questions.</li>
-          <li>Built a <strong>Python automated grading tool</strong> to streamline assignment evaluation and reduce manual overhead at scale.</li>
-          <li>Conducting active research in <strong>UAV swarm coordination, fault-tolerant control architectures, and multi-agent reinforcement learning</strong>.</li>
+          <li>TA for <strong>4 graduate courses</strong> — Machine Learning, Data Science, Foundations of Computing, and Introduction to Programming — supporting <strong>100+ graduate students</strong> through coursework, debugging sessions, and applied projects.</li>
+          <li>Diagnoses low-level C/C++ bugs for students: <strong>segmentation faults, memory allocation errors, and runtime undefined behavior</strong> across systems-level assignments.</li>
+          <li>Built a <strong>Python automated grading tool</strong> from scratch — validates submission structure and evaluates student code, eliminating manual review overhead across <strong>100+ weekly submissions</strong>.</li>
+          <li>Conducting concurrent research in <strong>UAV swarm coordination, fault-tolerant control, and multi-agent reinforcement learning</strong>.</li>
         </ul>
       </div>
       <div class="titem">
         <div class="tdot"></div>
         <div class="tmeta"><span class="tco">WERBOOZ India</span><span class="tsep">—</span><span class="trole">Junior Software Developer</span><span class="tdate">Sept 2023 – Oct 2024</span></div>
         <ul class="tlist">
-          <li>Engineered <strong>6 Java/Apex backend services</strong> achieving <strong>99.8% API uptime</strong>, reducing defects by <strong>30%</strong>, and resolving <strong>12 production incidents</strong> with documented root-cause analysis.</li>
-          <li>Led integration testing and API contract enforcement enabling stable downstream integration across client deployments.</li>
-          <li>Drove SOQL query optimization, Apex trigger development, and REST integrations with Salesforce APIs across production environments.</li>
+          <li>Engineered and maintained <strong>6 Java/Apex backend services</strong> across 3 enterprise clients in a Salesforce ecosystem — sustained <strong>99.8% API uptime</strong> and reduced manual processing overhead by <strong>40%</strong>.</li>
+          <li>Optimized <strong>15+ SQL/SOQL queries</strong>, cutting average query latency by <strong>35%</strong> across production workloads.</li>
+          <li>Authored <strong>500+ test cases</strong> across JUnit, Postman, and Tosca — reduced post-release defects by <strong>30%</strong> and cut QA cycle time by 2 days per sprint.</li>
+          <li>Resolved <strong>12 critical production incidents</strong> within 2-hour SLA windows via log analysis and root-cause debugging. Zero SLA breaches.</li>
         </ul>
       </div>
       <div class="titem">
         <div class="tdot"></div>
         <div class="tmeta"><span class="tco">WERBOOZ India</span><span class="tsep">—</span><span class="trole">Software Developer Intern</span><span class="tdate">Feb 2023 – Sept 2023</span></div>
         <ul class="tlist">
-          <li>Shipped <strong>4 production features</strong> and eliminated <strong>20+ bugs</strong>, contributing to a <strong>15% efficiency improvement</strong> in core backend workflows.</li>
-          <li>Developed backend modules in Java with REST integrations, API validation layers, and full Agile participation.</li>
+          <li>Refactored <strong>4 Java/SQL data access modules</strong>, reducing query latency from <strong>320ms to 275ms</strong> and improving overall module efficiency by <strong>15%</strong>.</li>
+          <li>Wrote JUnit test suites across <strong>3 release cycles</strong>, catching and eliminating <strong>20+ pre-production bugs</strong> before reaching QA.</li>
+          <li>Shipped <strong>4 backend features</strong> via Git PR workflows across 2 major quarterly releases — full Agile participation from spec to deployment.</li>
         </ul>
       </div>
       <div class="titem">
