@@ -14,6 +14,33 @@ export type WorkProject = {
   
   export const work: WorkProject[] = [
     {
+      slug: "uav-swarm-coordination",
+      title: "Failure Aware Supervision for Low Altitude UAV Swarms",
+      timeframe: "2024 – Present",
+      subtitle:
+        "Thesis case study on resilient swarm control under sensing, dynamics, and communication faults.",
+      summary:
+        "Built a layered UAV swarm simulation framework that keeps classical PID stabilization in the loop while adding diagnosis-aware supervision for adaptation under degraded conditions.",
+      highlights: [
+        "Designed a reproducible simulation environment for multi-UAV coordination under fault injection.",
+        "Modeled wind disturbance, GPS drift, sensing faults, and communication degradation across repeated trials.",
+        "Added a bounded supervisory layer that adapts behavior by fault type instead of reacting to generic error alone.",
+        "Framed control decisions in the context of low-altitude wireless coordination and edge-native autonomy.",
+      ],
+      stack: [
+        "Python",
+        "PyBullet",
+        "PID Control",
+        "Fault Injection",
+        "Swarm Simulation",
+        "Wireless Coordination",
+      ],
+      links: [
+        { label: "Case Study", href: "/portfolio/uav-case-study.html" },
+      ],
+      isCaseStudy: true,
+    },
+    {
       slug: "telecom-rag-thesis",
       title:
         "Retrieval-Augmented Generation for Telecom Optimization (Research Thesis)",

@@ -3,6 +3,10 @@ import type { WorkProject } from "@/lib/content";
 
 export function ProjectPreview({ project }: { project: WorkProject }) {
   const github = project.links?.find((l) => l.label.toLowerCase() === "github");
+  const caseStudy = project.links?.find((l) => l.label.toLowerCase() === "case study");
+  const primaryHref = caseStudy?.href ?? `/projects/${project.slug}`;
+  const primaryLabel = caseStudy ? "Read Case Study →" : "Details →";
+  const isExternalPrimary = Boolean(caseStudy?.href?.startsWith("http") || caseStudy?.href?.startsWith("/portfolio/"));
 
   return (
     <article className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm">
@@ -31,12 +35,21 @@ export function ProjectPreview({ project }: { project: WorkProject }) {
       </div>
 
       <div className="mt-6 flex items-center justify-between">
-        <Link
-          href={`/projects/${project.slug}`}
-          className="text-sm font-medium text-indigo-700 hover:text-indigo-800"
-        >
-          Details →
-        </Link>
+        {isExternalPrimary ? (
+          <a
+            href={primaryHref}
+            className="text-sm font-medium text-indigo-700 hover:text-indigo-800"
+          >
+            {primaryLabel}
+          </a>
+        ) : (
+          <Link
+            href={primaryHref}
+            className="text-sm font-medium text-indigo-700 hover:text-indigo-800"
+          >
+            {primaryLabel}
+          </Link>
+        )}
 
         {github?.href ? (
           <a
