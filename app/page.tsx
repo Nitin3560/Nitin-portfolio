@@ -62,8 +62,8 @@ export default function HomePage() {
         .about-aside-item { margin-bottom: 1.5rem; }
         .aside-label { font-family: var(--mono); font-size: 10px; color: var(--ink3); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.3rem; }
         .aside-value { font-size: 0.85rem; color: var(--ink2); font-weight: 400; line-height: 1.5; }
-        .about-text p { font-size: 1rem; color: var(--ink2); line-height: 1.85; font-weight: 400; margin-bottom: 1.3rem; }
-        .about-text p:first-child { font-size: 1.05rem; color: var(--ink); }
+        .about-text p { font-size: 0.95rem; color: var(--ink2); line-height: 1.85; font-weight: 400; margin-bottom: 1.1rem; }
+        .about-text p:first-child { font-size: 0.95rem; color: var(--ink2); }
         .about-text strong { color: var(--ink); font-weight: 600; }
 
         .research-main { display: grid; grid-template-columns: 140px 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--border2); margin-bottom: 2.5rem; }
@@ -72,24 +72,24 @@ export default function HomePage() {
         .research-subtitle { font-family: var(--mono); font-size: 11px; color: var(--ink3); letter-spacing: 0.06em; margin-bottom: 1.5rem; }
         .research-body p { font-size: 0.95rem; color: var(--ink2); line-height: 1.85; font-weight: 400; margin-bottom: 1.1rem; }
         .research-body strong { color: var(--ink); font-weight: 600; }
-        .research-paper-note { margin-top: 1.5rem; padding: 1rem 1.2rem; background: var(--bg2); border-left: 2px solid var(--accent); font-family: var(--mono); font-size: 12px; color: var(--ink2); line-height: 1.7; }
+        .research-paper-note { margin-top: 1.5rem; padding: 1rem 1.2rem; background: var(--bg); border: 1px solid var(--border); border-left: 2px solid var(--accent); font-family: var(--mono); font-size: 12px; color: var(--ink2); line-height: 1.7; }
         .stack-wrap { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 1.5rem; }
-        .stack-chip { font-family: var(--mono); font-size: 11px; color: var(--ink3); background: var(--bg2); border: 1px solid var(--border); padding: 4px 10px; border-radius: 2px; letter-spacing: 0.04em; }
+        .stack-chip { font-family: var(--mono); font-size: 11px; color: var(--ink3); background: var(--bg); border: 1px solid var(--border); padding: 4px 10px; border-radius: 2px; letter-spacing: 0.04em; }
         .research-links { display: flex; gap: 1.5rem; margin-top: 1.5rem; }
         .research-link { display: inline-flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 11px; color: var(--accent2); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 1px solid rgba(42,107,138,0.3); padding-bottom: 2px; transition: opacity 0.2s; }
         .research-link:hover { opacity: 0.7; }
 
-        .research-details { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; margin-top: 2rem; }
-        .research-detail-block { background: var(--bg); padding: 1.5rem; }
+        .research-details { display: grid; grid-template-columns: 1fr 1fr; gap: 0; background: var(--bg); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; margin-top: 2rem; }
+        .research-detail-block { background: var(--bg); padding: 1.5rem; border: 1px solid var(--border2); }
         .rdb-label { font-family: var(--mono); font-size: 10px; color: var(--ink3); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.8rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border2); }
         .rdb-items { display: flex; flex-direction: column; gap: 0.45rem; }
         .rdb-item { font-size: 0.88rem; color: var(--ink2); font-weight: 400; line-height: 1.5; padding-left: 1rem; position: relative; }
         .rdb-item::before { content: ''; position: absolute; left: 0; top: 0.65em; width: 4px; height: 1px; background: var(--ink3); }
 
-        .swarm-visual { margin: 2rem 0; display: flex; justify-content: flex-start; }
+        .swarm-visual { margin: 2rem 0; width: 100%; }
 
-        .research-sub-entries { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; margin-left: calc(140px + 3rem); }
-        .sub-entry { background: var(--bg); padding: 2rem; transition: background 0.2s; }
+        .research-sub-entries { display: grid; grid-template-columns: 1fr 1fr; gap: 0; background: var(--bg); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; margin-left: calc(140px + 3rem); }
+        .sub-entry { background: var(--bg); padding: 2rem; transition: background 0.2s; border: 1px solid var(--border2); }
         .sub-entry:hover { background: var(--bg2); }
         .sub-entry-tag { font-family: var(--mono); font-size: 10px; color: var(--ink3); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.8rem; }
         .sub-entry h4 { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 0.8rem; color: var(--ink); }
@@ -112,11 +112,11 @@ export default function HomePage() {
         .project-row-link:hover { opacity: 0.7; }
 
         .skills-domains { display: grid; grid-template-columns: 140px 1fr; gap: 3rem; }
-        .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
-        .skill-domain { background: var(--bg); padding: 1.8rem; }
+        .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; background: var(--bg); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
+        .skill-domain { background: var(--bg); padding: 1.8rem; border: 1px solid var(--border2); }
         .skill-domain-name { font-family: var(--mono); font-size: 10px; color: var(--ink3); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.2rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--border2); }
         .skill-tags { display: flex; flex-wrap: wrap; gap: 7px; }
-        .skill-tag { font-family: var(--sans); font-size: 12px; font-weight: 500; color: var(--ink2); background: var(--bg2); border: 1px solid var(--border); padding: 6px 12px; border-radius: 20px; transition: all 0.15s; cursor: default; }
+        .skill-tag { font-family: var(--sans); font-size: 12px; font-weight: 500; color: var(--ink2); background: var(--bg); border: 1px solid var(--border); padding: 6px 12px; border-radius: 20px; transition: all 0.15s; cursor: default; }
         .skill-tag:hover { background: var(--bg3); color: var(--ink); border-color: rgba(28,26,23,0.2); }
         .skill-tag.hl-red { background: rgba(196,74,42,0.09); color: var(--accent); border-color: rgba(196,74,42,0.25); font-weight: 600; }
         .skill-tag.hl-blue { background: rgba(42,107,138,0.09); color: var(--accent2); border-color: rgba(42,107,138,0.25); font-weight: 600; }
@@ -148,6 +148,17 @@ export default function HomePage() {
         .footer { border-top: 1px solid var(--border); padding: 1.5rem 3rem; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; }
         .footer-text { font-family: var(--mono); font-size: 11px; color: var(--ink3); letter-spacing: 0.06em; }
 
+        .pub-list { display: flex; flex-direction: column; }
+        .pub-item { display: grid; grid-template-columns: 140px 1fr; gap: 3rem; padding: 3rem 0; border-bottom: 1px solid var(--border2); }
+        .pub-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .pub-left { padding-top: 4px; }
+        .pub-status { display: inline-block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; margin-bottom: 0.8rem; background: rgba(42,107,138,0.08); color: var(--accent2); border: 1px solid rgba(42,107,138,0.2); }
+        .pub-venue { font-family: var(--mono); font-size: 11px; color: var(--ink3); letter-spacing: 0.06em; margin-bottom: 0.3rem; }
+        .pub-year { font-family: var(--mono); font-size: 11px; color: var(--ink3); letter-spacing: 0.04em; }
+        .pub-title { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; letter-spacing: -0.01em; line-height: 1.3; margin-bottom: 1rem; color: var(--ink); }
+        .pub-desc { font-size: 0.9rem; color: var(--ink2); line-height: 1.8; font-weight: 400; margin-bottom: 0.8rem; }
+        .pub-authors { font-family: var(--mono); font-size: 11px; color: var(--ink3); letter-spacing: 0.04em; }
+
         @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         ::-webkit-scrollbar { width: 4px; }
         ::-webkit-scrollbar-track { background: var(--bg); }
@@ -172,6 +183,7 @@ export default function HomePage() {
         <a className="nav-name" href="#">Nitin Singh Rathore</a>
         <ul className="nav-links">
           <li><a href="#research">Research</a></li>
+          <li><a href="#publications">Publications</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -264,7 +276,7 @@ export default function HomePage() {
           <h2 className="section-title">Research</h2>
         </div>
         <div className="research-main">
-          <div><span className="research-tag">Active Thesis</span></div>
+          <div><span className="research-tag">Thesis — Defended</span></div>
           <div className="research-body">
             <h3 className="research-title">UAV Autonomy Research Suite</h3>
             <div className="research-subtitle">Fault tolerant supervisory control for autonomous UAV swarms</div>
@@ -273,7 +285,7 @@ export default function HomePage() {
             <p>Validated across <strong>30 randomized seeds</strong> with controlled fault injection windows. Results are repeatable, not cherry picked. A ROS2 rclpy bridge publishes live swarm pose, odometry, actuator commands, and fault state streams. The entire stack runs in a Docker and ROS2 Jazzy containerized environment for reproducible multi-machine experiments.</p>
 
             <div className="swarm-visual">
-              <svg viewBox="0 0 480 120" width="480" fill="none" xmlns="http://www.w3.org/2000/svg" style={{opacity: 0.75, maxWidth: '100%'}}>
+              <svg viewBox="0 0 480 120" width="100%" fill="none" xmlns="http://www.w3.org/2000/svg" style={{opacity: 0.75, maxWidth: '100%', display: 'block'}}>
                 <line x1="240" y1="60" x2="120" y2="35" stroke="#2a6b8a" strokeWidth="1" strokeDasharray="4 4" opacity="0.5"/>
                 <line x1="240" y1="60" x2="360" y2="35" stroke="#2a6b8a" strokeWidth="1" strokeDasharray="4 4" opacity="0.5"/>
                 <line x1="240" y1="60" x2="80" y2="75" stroke="#2a6b8a" strokeWidth="1" strokeDasharray="4 4" opacity="0.5"/>
@@ -373,10 +385,44 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* PUBLICATIONS */}
+      <section className="section" id="publications">
+        <div className="section-header">
+          <div className="section-num">03</div>
+          <h2 className="section-title">Publications</h2>
+        </div>
+        <div className="pub-list">
+          <div className="pub-item">
+            <div className="pub-left">
+              <div className="pub-status">Under Review</div>
+              <div className="pub-venue">IEEE Network Magazine</div>
+              <div className="pub-year">2026</div>
+            </div>
+            <div className="pub-right">
+              <h3 className="pub-title">Cross-Layer Supervisory Control for Low-Altitude UAV Swarm Networks</h3>
+              <p className="pub-desc">This paper presents a cross-layer supervisory architecture for fault tolerant coordination in low-altitude UAV swarm networks. The supervisory layer operates above a classical PID control loop and makes fault classification decisions across the dynamics, sensing, and communication layers simultaneously, rather than treating each failure mode independently. The architecture is validated in a physics-based simulation environment across 30 randomized seeds with controlled fault injection across wind disturbance, sensor corruption, communication degradation, and agent dropout.</p>
+              <p className="pub-authors">Nitin Singh Rathore &nbsp;&nbsp; UT Arlington, 2026</p>
+            </div>
+          </div>
+          <div className="pub-item">
+            <div className="pub-left">
+              <div className="pub-status">Defended</div>
+              <div className="pub-venue">MS Thesis</div>
+              <div className="pub-year">2026</div>
+            </div>
+            <div className="pub-right">
+              <h3 className="pub-title">Cross-Layer Supervisory Control for Low-Altitude UAV Swarm Networks</h3>
+              <p className="pub-desc">MS thesis at UT Arlington exploring how multi-UAV systems can remain controllable and coordinated when the environment becomes unreliable. Instead of replacing classical control with a learned policy, the work layers a diagnosis driven supervisory mechanism on top of a stable PID control loop, letting the swarm respond differently to dynamics faults, sensing faults, and communication degradation. The contribution is a systems perspective on how bounded decision loops, coordination, and supervision can coexist in a deployable autonomy architecture.</p>
+              <p className="pub-authors">Nitin Singh Rathore &nbsp;&nbsp; UT Arlington &nbsp;&nbsp; Advisor: Dr. Md Salik Parwez</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* PROJECTS */}
       <section className="section" id="projects">
         <div className="section-header">
-          <div className="section-num">03</div>
+          <div className="section-num">04</div>
           <h2 className="section-title">Projects</h2>
         </div>
         <div className="project-row">
@@ -428,7 +474,7 @@ export default function HomePage() {
       {/* SKILLS */}
       <section className="section" id="skills">
         <div className="section-header">
-          <div className="section-num">04</div>
+          <div className="section-num">05</div>
           <h2 className="section-title">Skills</h2>
         </div>
         <div className="skills-domains">
@@ -510,7 +556,7 @@ export default function HomePage() {
       {/* EXPERIENCE */}
       <section className="section" id="experience">
         <div className="section-header">
-          <div className="section-num">05</div>
+          <div className="section-num">06</div>
           <h2 className="section-title">Experience</h2>
         </div>
         <div className="exp-entries">
@@ -583,3 +629,4 @@ export default function HomePage() {
     </>
   );
 }
+
